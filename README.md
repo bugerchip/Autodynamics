@@ -1,7 +1,7 @@
 # Autodynamics
 
 > **Layer 2 of 3** in the autonomy research trilogy:
-> [Autonometrics](https://github.com/bugerchip/Autonometrics) (measure) -> **Autodynamics** (explain) -> [Ex-Machina](https://github.com/bugerchip/Ex-Machina) (build / emulate)
+> [Autonometrics](https://github.com/bugerchip/Autonometrics) (measure) -> **Autodynamics** (explain) -> Ex-Machina (build / emulate)
 
 **Status:** Pre-alpha. Ships a recording substrate; no stable theoretical model yet.
 
@@ -72,7 +72,7 @@ print(trajectory.total_path_length())       # sum of delta magnitudes
 |---|---|---|
 | 1 | [Autonometrics](https://github.com/bugerchip/Autonometrics) | *Where* does a system sit on the autonomy atlas? |
 | 2 | **Autodynamics** | *How* does it move across the atlas over time? |
-| 3 | [Ex-Machina](https://github.com/bugerchip/Ex-Machina) | *Can we build* a system that occupies a chosen region? |
+| 3 | Ex-Machina | *Can we build* a system that occupies a chosen region? |
 
 ## License
 
@@ -80,4 +80,4 @@ Apache License 2.0 — see [LICENSE](LICENSE).
 
 ## Citation
 
-If you reference this work, please cite the trilogy as a whole. A formal citation block will be added in `v0.2.x`.
+If you reference this work, please cite Autodynamics directly. A formal citation block will be added in `v0.2.x`.
