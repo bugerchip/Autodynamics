@@ -62,7 +62,7 @@ print(trajectory.total_path_length())       # sum of delta magnitudes
 
 ## Roadmap
 
-- `v0.1.0a0` *(current)*: Toy trajectory recorder. Reserves name, declares vision, ships demo.
+- `v0.1.0a1` *(current)*: Toy trajectory recorder. Reserves name, declares vision, ships demo.
 - `v0.2.x`: First serious dynamics primitives (attractor characterisation, regime classification). Lands after Autonometrics reaches v1.0.
 - `v1.0.0`: Stable trajectory API on top of Autonometrics profiles.
 

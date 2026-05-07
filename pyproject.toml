@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "autodynamics"
-version = "0.1.0a0"
+version = "0.1.0a1"
 description = "Modelling autonomy dynamics over the Autonometrics atlas. Ships ProfileTrajectory: a recording substrate for sequences of autonomy profiles. Layer 2 of the Autonometrics -> Autodynamics -> Ex-Machina trilogy."
 readme = "README.md"
 requires-python = ">=3.10"

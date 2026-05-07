@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.0a1] — 2026-05-07
+
+### Changed
+
+- README no longer hyperlinks the (now-private) Ex-Machina repository
+  and the Citation section asks to cite Autodynamics directly instead
+  of the trilogy as a whole. No code, no API, no behaviour changes vs.
+  `0.1.0a0`; this is a metadata-only release because PyPI does not
+  allow re-uploading the same `(name, version)` filename after fixes.
+
 ## [0.1.0a0] — 2026-05-05
 
 ### Added
