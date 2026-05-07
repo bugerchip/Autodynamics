@@ -2,7 +2,7 @@
 
 Layer 2 of the Autonometrics -> Autodynamics -> Ex-Machina trilogy.
 
-Public API in v0.1.0a0:
+Public API in v0.1.0a1:
 
 - :class:`ProfileTrajectory` — a time series of autonomy profiles, with
   utilities to read axis-wise series, compute pairwise consecutive
@@ -24,7 +24,7 @@ from autodynamics.trajectory import (
     ProfileTrajectory,
 )
 
-__version__ = "0.1.0a0"
+__version__ = "0.1.0a1"
 
 __all__ = [
     "ProfileDelta",
