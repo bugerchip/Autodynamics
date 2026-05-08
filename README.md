@@ -3,18 +3,11 @@
 > **Layer 2 of 3** in the autonomy research trilogy:
 > [Autonometrics](https://github.com/bugerchip/Autonometrics) (measure) -> **Autodynamics** (explain) -> Ex-Machina (build / emulate)
 
-**Status:** Pre-alpha. Ships a recording substrate, a small algebra of trajectories, and generic CSV / batch adapters. No stable theoretical model yet.
+**Status:** Pre-alpha. Recording substrate, algebra of trajectories, and generic adapters. No theoretical model is claimed.
 
 ## Vision
 
-`Autonometrics` quantifies *where* a system sits on the five autonomy axes (closure, memory, constraint closure, persistence, coherence). `Autodynamics` aims to model *how* systems move across that atlas: trajectories, attractors, transitions, and the dynamical regularities that govern changes in autonomy.
-
-This package will eventually expose:
-
-- Trajectory analysis tools over `AutonomyProfile` time series.
-- Phase-space modelling for systems described by the `AutonomySystem` protocol.
-- Stability and attractor characterisation across the five-axis atlas.
-- Hooks for empirical validation against longitudinal data from biology, AI, and motivational psychology corpora.
+`Autonometrics` quantifies *where* a system sits on the five autonomy axes (closure, memory, constraint closure, persistence, coherence). This package gives *mechanical* support for working with *how* those measurements change over time: record ordered profiles, take differences, and summarise motion in the atlas with explicit primitives. It does **not** ship a dynamical *theory* (attractors, phase structure, or predictive claims about autonomy). Interpretation of trajectories as evidence for such a theory is **out of scope** of the public API as it stands; the code is a reproducible toolkit, not a proof.
 
 ## What this package contains today
 
@@ -53,7 +46,7 @@ prints a per-axis summary instead of the deltas.
 
 ## Toy demo: `ProfileTrajectory`
 
-> **Disclaimer.** This is the *recording substrate* of Autodynamics, not its theory. The trajectory class lets you collect, traverse, and compute simple geometric quantities over a sequence of `AutonomyProfile`s. **It does not interpret what those movements mean** — that interpretation is the open research question this package will eventually try to answer. Treat the code as a useful template, not as evidence.
+> **Disclaimer.** This is the *recording substrate* of Autodynamics, not its theory. The trajectory class lets you collect, traverse, and compute simple geometric quantities over a sequence of `AutonomyProfile`s. **It does not interpret what those movements mean** — assigning meaning is outside the scope of the public API. Treat the code as a reproducible toolkit or template, not as evidence for a larger claim.
 
 ```python
 import autonometrics as anm
@@ -74,7 +67,8 @@ print(trajectory.total_path_length())       # sum of delta magnitudes
 
 ## Trajectory algebra
 
-`v0.2.0a0` adds an algebra of trajectories on top of the substrate.
+Beyond the substrate, the package exposes an algebra of trajectories
+(velocity-style differences, rolling statistics, per-axis summary).
 Every primitive is mosaic-dropout fielty: `None` propagates through
 differences, but never aborts aggregations.
 
@@ -150,6 +144,9 @@ Pre-registered, falsifiable experiments that stress the algebra
 primitives against the public Autonometrics benchmarks. Each
 experiment locks its hypothesis in `docs/` before any output is
 generated, and records both confirmations and rejections verbatim.
+Recent public runs include **negative results**: they narrow what the
+current primitives can support and are not written as motivation for a
+new public release cycle.
 
 - [`docs/TURBULENCE_RANKING.md`](docs/TURBULENCE_RANKING.md) — pre-registered
   ranking of the five Autonometrics zoo classes by cross-seed
@@ -162,16 +159,17 @@ generated, and records both confirmations and rejections verbatim.
 ## Roadmap
 
 - `v0.1.0a0` / `v0.1.0a1`: Toy trajectory recorder. Reserves name, declares vision, ships demo.
-- `v0.2.0a0` *(current)*: Trajectory algebra (velocities, accelerations, drift, volatility, rolling statistics, summary), generic CSV / batch adapters, pre-registered diagnostics.
-- `v0.3.x`: First serious dynamics primitives (per pre-registration ahead of cycle).
-- `v1.0.0`: Stable trajectory API on top of Autonometrics profiles.
+- `v0.2.0a0`: Trajectory algebra (velocities, accelerations, drift, volatility, rolling statistics, summary), generic CSV / batch adapters, pre-registered diagnostics, public validation track.
+- `v0.2.1a0` *(current)*: Documentation cleanup; PyPI summary description shortened.
+
+The current scope is treated as a stable feature set. Further cycles will be opened only when motivated by a concrete pre-registered design document or external collaboration; no future cycle is pre-declared.
 
 ## Position in the trilogy
 
 | Layer | Project | Question it answers |
 |---|---|---|
 | 1 | [Autonometrics](https://github.com/bugerchip/Autonometrics) | *Where* does a system sit on the autonomy atlas? |
-| 2 | **Autodynamics** | *How* does it move across the atlas over time? |
+| 2 | **Autodynamics** | *How* do successive profiles differ (recorded motion, not a dynamical model)? |
 | 3 | Ex-Machina | *Can we build* a system that occupies a chosen region? |
 
 ## License

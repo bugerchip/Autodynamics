@@ -6,11 +6,10 @@ windows, snapshots), build one :class:`ProfileTrajectory` per group
 and provide light cross-group aggregation that does not introduce
 calibration or thresholds of its own.
 
-Aggregation is intentionally narrow: only ``mean_summary`` is shipped
-in ``v0.2.0a0``, and it averages the per-axis ``summary()`` metrics
-across groups. Any heavier statistic (cross-group correlation,
-coupling, divergence) is deferred to later cycles where it earns a
-pre-registered design document.
+Aggregation is intentionally narrow: only ``mean_summary`` is shipped,
+and it averages the per-axis ``summary()`` metrics across groups. Any
+heavier statistic (cross-group correlation, coupling, divergence) is
+out of scope of this package's current API.
 """
 
 from __future__ import annotations

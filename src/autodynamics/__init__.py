@@ -2,14 +2,14 @@
 
 Layer 2 of the Autonometrics -> Autodynamics -> Ex-Machina trilogy.
 
-Public API in v0.2.0a0:
+Public API:
 
 - :class:`ProfileTrajectory` — a time series of autonomy profiles.
-  In addition to the recording substrate of v0.1.x (axis-wise series,
-  pairwise deltas, total path length), v0.2.x adds an algebra of
-  trajectories: ``velocities``, ``accelerations``, ``drift``,
-  ``volatility``, ``path_length_per_axis``, ``rolling_mean``,
-  ``rolling_std`` and a one-shot per-axis ``summary``.
+  Beyond the recording substrate (axis-wise series, pairwise deltas,
+  total path length), exposes an algebra of trajectories:
+  ``velocities``, ``accelerations``, ``drift``, ``volatility``,
+  ``path_length_per_axis``, ``rolling_mean``, ``rolling_std`` and a
+  one-shot per-axis ``summary``.
 - :class:`ProfileSnapshot` — a single recorded measurement.
 - :class:`ProfileDelta` — pairwise difference with Euclidean magnitude.
 - :class:`CSVTrajectoryAdapter` — load a trajectory from a CSV with
@@ -34,7 +34,7 @@ from autodynamics.trajectory import (
     ProfileTrajectory,
 )
 
-__version__ = "0.2.0a0"
+__version__ = "0.2.1a0"
 
 __all__ = [
     "BatchTrajectoryAdapter",

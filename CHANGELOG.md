@@ -5,6 +5,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1a0] — 2026-05-07
+
+### Changed
+
+- PyPI summary description shortened from the long form shipped in
+  `0.2.0a0` ("Modelling autonomy dynamics over the Autonometrics
+  atlas. Ships a ProfileTrajectory recording substrate, a small
+  algebra of trajectories ...") to the concise
+  "Modelling autonomy dynamics over the Autonometrics atlas." The
+  short form renders as one line in PyPI search results.
+- README roadmap simplified. Future cycles are no longer
+  pre-declared. The current scope (algebra primitives, generic
+  adapters, pre-registered diagnostics, public validation track) is
+  treated as a stable feature set; further development will be
+  motivated by a concrete pre-registered design document or external
+  collaboration.
+- README Vision, toy-demo disclaimer, “Public validation track” intro,
+  trajectory-algebra lead paragraph, and layer-2 row of the trilogy
+  table reworded so the public narrative matches the stable-scope
+  stance: mechanical toolkit, no claimed dynamical theory, honest
+  signposting of negative validation outcomes (without altering
+  pre-registered `docs/`).
+- Documentation softened on `docs/TRAJECTORY_DIAGNOSTICS.md` and
+  `docs/TURBULENCE_RANKING.md`: references to unannounced future
+  cycles and to specific successor programmes have been replaced by
+  scope-of-current-cycle phrasing. Pre-registered LDs, POs and
+  verdicts are unchanged.
+- Source-code docstrings on `src/autodynamics/trajectory.py` and
+  `src/autodynamics/adapters/batch.py` updated for the same reason.
+
+### Notes
+
+- This is a documentation-and-metadata release. No public API
+  surface changes vs `0.2.0a0`; all 119 tests continue to pass
+  unchanged.
+- `__version__` bumped from `0.2.0a0` to `0.2.1a0` so that PyPI
+  accepts the corrected metadata; PyPI does not allow re-uploading
+  an already-published `(name, version)` filename.
+
 ## [0.2.0a0] — 2026-05-07
 
 ### Added

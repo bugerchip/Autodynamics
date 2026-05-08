@@ -38,7 +38,7 @@ The hypothesis is therefore narrow on purpose: if it confirms, it
 shows that the volatility primitive of `ProfileTrajectory`, when fed
 cross-seed siblings, recovers an intuitive turbulence ordering of
 the zoo. If it rejects, it shows that this ordering is not what the
-primitive captures, and helps direct the v0.3.x cycle.
+primitive captures.
 
 ---
 
@@ -200,7 +200,7 @@ Required to confirm: 3 of 4. Threshold not met.
 The rejection is informative rather than catastrophic, and it is
 explicitly the kind of outcome the pre-registration was designed to
 capture honestly. Two distinct findings stand out, both treated as
-**hypotheses for future cycles**, not as edits to LD-4:
+**observations to keep in mind**, not as edits to LD-4:
 
 1. **Closure and constraint behave as predicted; memory and
    persistence do not.** The two passing axes are the ones whose
@@ -230,11 +230,13 @@ capture honestly. Two distinct findings stand out, both treated as
    on `closure` and `constraint`, but it cannot stand in for
    temporal turbulence on `memory` and `persistence`.
 
-Both findings are direct input for the v0.3.x cycle (Coupling Graph
-Γ). The Γ programme already presupposes that not all five axes
-co-vary the same way; this experiment provides the first piece of
-public evidence that the asymmetry has a measurable, repeatable
-structure.
+Both findings stand on their own as observations about the
+Autonometrics `v0.8.0a0` zoo: not all five axes carry the same kind
+of signal under cross-seed dispersion, and `volatility` over a
+seed-sorted pseudo-trajectory measures regime-level concentration
+rather than temporal turbulence. They do not in themselves motivate
+a successor cycle; that decision is left for whenever a concrete
+pre-registered design document is ready to make use of them.
 
 ---
 
