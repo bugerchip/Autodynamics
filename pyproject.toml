@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "autodynamics"
 version = "0.2.0a0"
-description = "Modelling autonomy dynamics over the Autonometrics atlas. Ships a ProfileTrajectory recording substrate, a small algebra of trajectories (velocities, accelerations, drift, volatility, rolling statistics, summary), and generic CSV/batch adapters. Layer 2 of the Autonometrics -> Autodynamics -> Ex-Machina trilogy."
+description = "Modelling autonomy dynamics over the Autonometrics atlas."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"
