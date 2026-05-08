@@ -1,0 +1,50 @@
+==============================================================================
+Autodynamics — public validation experiment: turbulence ranking (v0.2.1a0)
+==============================================================================
+Pre-registered design lives in docs/TURBULENCE_RANKING.md. This script's
+constants (_PREREGISTERED_RANKING, _PER_AXIS_RHO_PASS, _REQUIRED_AXES_TO_PASS,
+_MIN_DEFINED_PER_GROUP, _EVALUABLE_AXES) are the operational form of LD-4 and
+LD-5 and must not be modified after the first run.
+
+Pre-registered ranking (rank 1 = least turbulent):
+  1. PeriodicCycle
+  2. SimpleAutomaton
+  3. ECASystem
+  4. PromisedCycle
+  5. KauffmanNetwork
+
+Source release:    v0.8.0a0
+Per-axis pass:     rho >= 0.7
+Hypothesis pass:   pass in >= 3 of 4 evaluable axes (['closure', 'memory', 'constraint', 'persistence'])
+Group qualifying:  n_defined per group >= 5
+
+[load] C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.8.0a0.csv
+        groups: 31
+
+[batch] materialised 31 trajectories
+
+Per-class average volatility (mean over qualifying groups), axis by axis:
+------------------------------------------------------------------------------
+  class                     closure         memory     constraint    persistence      coherence
+  ---------------------------------------------------------------------------------------------
+  ECASystem                0.000000       0.041890       0.000000       0.069508           None
+  KauffmanNetwork          0.601363       0.434201       0.238476       0.619198           None
+  PeriodicCycle            0.000000       0.005143       0.000000       0.000000           None
+  PromisedCycle            0.006170       0.000000           None       0.000000       0.010612
+  SimpleAutomaton          0.003010       0.035143       0.000000       0.000000           None
+
+Per-axis evaluation (observed ranking vs pre-registered, Spearman rho):
+------------------------------------------------------------------------------
+  closure: rho=0.8208 [PASS] observed: PeriodicCycle(0.000000) < ECASystem(0.000000) < SimpleAutomaton(0.003010) < PromisedCycle(0.006170) < KauffmanNetwork(0.601363)
+  memory: rho=0.4000 [FAIL] observed: PromisedCycle(0.000000) < PeriodicCycle(0.005143) < SimpleAutomaton(0.035143) < ECASystem(0.041890) < KauffmanNetwork(0.434201)
+  constraint: rho=0.8783 [PASS] observed: PeriodicCycle(0.000000) < SimpleAutomaton(0.000000) < ECASystem(0.000000) < KauffmanNetwork(0.238476)
+  persistence: rho=0.6708 [FAIL] observed: PeriodicCycle(0.000000) < SimpleAutomaton(0.000000) < PromisedCycle(0.000000) < ECASystem(0.069508) < KauffmanNetwork(0.619198)
+  coherence: rho=n/a [REPORT-ONLY] observed: PromisedCycle(0.010612)
+
+Verdict
+------------------------------------------------------------------------------
+Evaluable axes that passed: 2 / 4
+Required to confirm:        3
+Hypothesis: REJECTED
+
+Wrote C:\Users\Usuario\Documents\GitHub\Autodynamics\docs\benchmarks\turbulence_ranking_v0.2.1a0.csv

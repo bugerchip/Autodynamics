@@ -147,17 +147,99 @@ sampled rules).
 
 ## Implementation report
 
-[FILLED AFTER THE FIRST RUN OF `examples/turbulence_ranking.py`.]
+First run executed against
+`Autonometrics/docs/benchmarks/v0.8.0a0.csv` (n = 645 rows, 31 groups,
+5 system classes, 5 canonical axes). The script materialised 31
+`ProfileTrajectory` instances via `CSVTrajectoryAdapter` and a parallel
+group-keyed view via `BatchTrajectoryAdapter` for redundancy. Both
+preconditions PO-1 (script runs to completion) and PO-2 (every
+evaluable axis aggregates ≥ 3 classes) hold:
+
+| Axis        | Classes with aggregate volatility |
+|-------------|-----------------------------------|
+| closure     | 5 of 5                            |
+| memory      | 5 of 5                            |
+| constraint  | 4 of 5 (PromisedCycle absent)     |
+| persistence | 5 of 5                            |
+| coherence   | 1 of 5 (report-only)              |
+
+Per-class average volatility (mean over qualifying groups), as written
+to `docs/benchmarks/turbulence_ranking_v0.2.1a0.csv`:
+
+| Class             | closure  | memory   | constraint | persistence | coherence |
+|-------------------|----------|----------|------------|-------------|-----------|
+| `PeriodicCycle`   | 0.000000 | 0.005143 | 0.000000   | 0.000000    | n/a       |
+| `SimpleAutomaton` | 0.003010 | 0.035143 | 0.000000   | 0.000000    | n/a       |
+| `ECASystem`       | 0.000000 | 0.041890 | 0.000000   | 0.069508    | n/a       |
+| `PromisedCycle`   | 0.006170 | 0.000000 | n/a        | 0.000000    | 0.010612  |
+| `KauffmanNetwork` | 0.601363 | 0.434201 | 0.238476   | 0.619198    | n/a       |
+
+Per-axis Spearman ρ between observed ranking and the pre-registered
+ranking restricted to the classes present:
+
+| Axis        | n_classes | ρ      | Outcome      |
+|-------------|-----------|--------|--------------|
+| closure     | 5         | 0.8208 | **PASS**     |
+| memory      | 5         | 0.4000 | FAIL         |
+| constraint  | 4         | 0.8783 | **PASS**     |
+| persistence | 5         | 0.6708 | FAIL         |
+| coherence   | 1         | n/a    | report-only  |
+
+Full stdout is preserved verbatim in
+`docs/benchmarks/turbulence_ranking_v0.2.1a0.log.txt`.
 
 ---
 
 ## Verdict
 
-[FILLED AFTER THE FIRST RUN. The verdict, whatever it is, is recorded
-verbatim. Both confirmation and rejection are valuable outcomes.]
+**Hypothesis: REJECTED.**
+
+Evaluable axes that passed (LD-5): 2 of 4 (`closure`, `constraint`).
+Required to confirm: 3 of 4. Threshold not met.
+
+The rejection is informative rather than catastrophic, and it is
+explicitly the kind of outcome the pre-registration was designed to
+capture honestly. Two distinct findings stand out, both treated as
+**hypotheses for future cycles**, not as edits to LD-4:
+
+1. **Closure and constraint behave as predicted; memory and
+   persistence do not.** The two passing axes are the ones whose
+   measurement in Autonometrics is closest to a structural binary
+   diagnostic: what fraction of states are reachable from oneself
+   (closure) and how much of the future is ruled out by the present
+   (constraint). On these axes the cross-seed dispersion ordering
+   matches the pre-registered turbulence intuition almost exactly.
+   On `memory` and `persistence` it does not: `PromisedCycle`, in
+   particular, lands at volatility 0.0 on both, far below where the
+   intuition placed it. The cleanest reading is that these two axes
+   are saturating to floor or ceiling for `PromisedCycle` regardless
+   of `p_noise`, which compresses the cross-seed standard deviation
+   to zero. This is a measurement-saturation effect inherited from
+   the `v0.8.0a0` Autonometrics zoo, not a property of the
+   `ProfileTrajectory` algebra.
+
+2. **Cross-seed dispersion is not the same construct as turbulence
+   in the intuitive sense.** Two systems can be equally "boring"
+   across siblings (every seed lands on the same fixed point) while
+   being completely different in their dynamics through time. The
+   experiment confirms that `volatility(axis)` over a seed-sorted
+   pseudo-trajectory measures **regime-level concentration**, not
+   trajectory turbulence. This distinction was already noted in the
+   "What this experiment is — and is not" preamble; the rejection
+   sharpens it: cross-seed concentration is a real and useful signal
+   on `closure` and `constraint`, but it cannot stand in for
+   temporal turbulence on `memory` and `persistence`.
+
+Both findings are direct input for the v0.3.x cycle (Coupling Graph
+Γ). The Γ programme already presupposes that not all five axes
+co-vary the same way; this experiment provides the first piece of
+public evidence that the asymmetry has a measurable, repeatable
+structure.
 
 ---
 
 ## Deviations from pre-registration
 
-[NONE EXPECTED. IF ANY, EACH IS NAMED AND JUSTIFIED HERE.]
+None. LD-1 through LD-6 were enforced exactly as committed in
+`9a3d88c`. The ranking constants in `examples/turbulence_ranking.py`
+were not modified between the pre-registration commit and the run.

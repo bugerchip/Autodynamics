@@ -144,6 +144,21 @@ A reproducible end-to-end example using both adapters over a public
 fixture is shipped at
 [`examples/trajectory_demo.py`](examples/trajectory_demo.py).
 
+## Public validation track
+
+Pre-registered, falsifiable experiments that stress the algebra
+primitives against the public Autonometrics benchmarks. Each
+experiment locks its hypothesis in `docs/` before any output is
+generated, and records both confirmations and rejections verbatim.
+
+- [`docs/TURBULENCE_RANKING.md`](docs/TURBULENCE_RANKING.md) — pre-registered
+  ranking of the five Autonometrics zoo classes by cross-seed
+  volatility on the `v0.8.0a0` benchmark. Reproducible from
+  [`examples/turbulence_ranking.py`](examples/turbulence_ranking.py); raw
+  outputs in [`docs/benchmarks/turbulence_ranking_v0.2.1a0.csv`](docs/benchmarks/turbulence_ranking_v0.2.1a0.csv)
+  and the full log in
+  [`docs/benchmarks/turbulence_ranking_v0.2.1a0.log.txt`](docs/benchmarks/turbulence_ranking_v0.2.1a0.log.txt).
+
 ## Roadmap
 
 - `v0.1.0a0` / `v0.1.0a1`: Toy trajectory recorder. Reserves name, declares vision, ships demo.
