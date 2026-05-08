@@ -7,8 +7,8 @@ compute pairwise consecutive deltas, and sum the resulting magnitudes
 into a total path length.
 
 The class is the *recording substrate* of Autodynamics; it does not
-interpret what the recorded movements mean. That interpretation is the
-open research question this package will eventually try to answer.
+interpret what the recorded movements mean. That interpretation is out
+of scope of this package's current API.
 """
 
 from __future__ import annotations
@@ -93,8 +93,8 @@ class ProfileTrajectory:
     consecutive deltas, and summing path length.
 
     The class does not interpret what the recorded movements mean — that
-    is the open research question this package will eventually try to
-    answer. Use it as a recording substrate, not as evidence.
+    is out of scope of this package's current API. Use it as a recording
+    substrate, not as evidence.
 
     Parameters
     ----------

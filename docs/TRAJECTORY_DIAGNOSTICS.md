@@ -62,8 +62,9 @@ recording. It does *not*:
 - predict transitions,
 - claim correlation structure across axes that survives across systems.
 
-Those claims are deferred to `v0.3.x` and beyond and will be
-pre-registered in their own design documents when their cycles open.
+Those claims are out of scope. They are not made in this cycle, and
+will only be added if and when an explicit pre-registered design
+document is shipped.
 
 ---
 

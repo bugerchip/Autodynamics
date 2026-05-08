@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "autodynamics"
-version = "0.2.0a0"
+version = "0.2.1a0"
 description = "Modelling autonomy dynamics over the Autonometrics atlas."
 readme = "README.md"
 requires-python = ">=3.10"
