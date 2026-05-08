@@ -37,6 +37,16 @@ def main() -> None:
         help="trajectory length per system",
     )
     parser.add_argument("--seed", type=int, default=0, help="RNG seed")
+    parser.add_argument(
+        "--report",
+        choices=("default", "summary"),
+        default="default",
+        help=(
+            "output mode: 'default' prints per-pair deltas and total path "
+            "length; 'summary' prints the per-axis ProfileTrajectory.summary() "
+            "instead"
+        ),
+    )
     args = parser.parse_args()
 
     trajectory = ProfileTrajectory(axes=("closure", "memory"))
@@ -71,6 +81,26 @@ def main() -> None:
 
     print()
     print(f"Number of snapshots:    {len(trajectory)}")
+
+    if args.report == "summary":
+        summary = trajectory.summary()
+        print()
+        print("Per-axis summary:")
+        print("-" * 56)
+        for axis, metrics in summary.items():
+            print(f"  {axis}:")
+            for metric, value in metrics.items():
+                if isinstance(value, bool):
+                    value_s = str(value)
+                elif isinstance(value, int):
+                    value_s = str(value)
+                elif isinstance(value, float):
+                    value_s = f"{value:.4f}"
+                else:
+                    value_s = "None"
+                print(f"    {metric:>12s} = {value_s}")
+        return
+
     deltas = trajectory.deltas()
     print(f"Number of deltas:       {len(deltas)}")
     for delta in deltas:

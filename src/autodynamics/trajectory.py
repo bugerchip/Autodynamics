@@ -217,6 +217,254 @@ class ProfileTrajectory:
             return None
         return float(sum(magnitudes))
 
+    # ------------------------------------------------------------------
+    # Algebra primitives (added in v0.2.0a0)
+    # ------------------------------------------------------------------
+
+    def velocities(
+        self, axis: str | None = None
+    ) -> dict[str, list[float | None]] | list[float | None]:
+        """First differences of the axis-wise series.
+
+        For each axis, returns a list of length ``max(len(self) - 1, 0)``
+        whose ``i``-th entry is ``series[i + 1] - series[i]``, or ``None``
+        if either endpoint is ``None`` (mosaic dropout).
+
+        Parameters
+        ----------
+        axis:
+            If ``None`` (default), return a dict ``{axis: [...]}`` over
+            every axis configured on this trajectory. If a canonical
+            axis name is given, return only that axis' list.
+        """
+        if axis is None:
+            return {a: self._velocities_for(a) for a in self._axes}
+        self._validate_axis(axis)
+        return self._velocities_for(axis)
+
+    def accelerations(
+        self, axis: str | None = None
+    ) -> dict[str, list[float | None]] | list[float | None]:
+        """Second differences of the axis-wise series.
+
+        Defined as the first differences of :meth:`velocities`. Each
+        list has length ``max(len(self) - 2, 0)``. ``None`` propagates
+        if either endpoint of the velocity pair is ``None``.
+
+        Parameters
+        ----------
+        axis:
+            See :meth:`velocities`.
+        """
+        if axis is None:
+            return {a: self._accelerations_for(a) for a in self._axes}
+        self._validate_axis(axis)
+        return self._accelerations_for(axis)
+
+    def drift(
+        self, axis: str | None = None
+    ) -> dict[str, float | None] | float | None:
+        """Net change between the first and last *defined* values of an axis.
+
+        Skips ``None`` slots: if the axis has values
+        ``[None, 0.3, 0.5, None, 0.7]``, the drift is ``0.7 - 0.3 = 0.4``.
+
+        Returns ``None`` for an axis with fewer than two defined values
+        (a single defined value, or a fully-undefined axis, both yield
+        ``None``).
+        """
+        if axis is None:
+            return {a: self._drift_for(a) for a in self._axes}
+        self._validate_axis(axis)
+        return self._drift_for(axis)
+
+    def volatility(
+        self, axis: str | None = None
+    ) -> dict[str, float | None] | float | None:
+        """Sample standard deviation (``ddof=1``) of an axis' velocities.
+
+        Operates on the *velocities*, not on the raw values, so a strictly
+        monotone trajectory has positive ``drift`` but zero ``volatility``
+        when its velocities are constant.
+
+        Returns ``None`` if the axis has fewer than two defined velocities
+        (sample variance is undefined for a single observation).
+        """
+        if axis is None:
+            return {a: self._volatility_for(a) for a in self._axes}
+        self._validate_axis(axis)
+        return self._volatility_for(axis)
+
+    def path_length_per_axis(self) -> dict[str, float | None]:
+        """Sum of absolute velocities, axis by axis.
+
+        For each axis, sums ``|v|`` over the defined velocities, skipping
+        ``None`` slots (consistent with :meth:`total_path_length`).
+
+        Returns ``None`` for an axis whose velocities are all ``None``
+        (fully-undefined or single-snapshot trajectories).
+        """
+        return {a: self._path_length_for(a) for a in self._axes}
+
+    def rolling_mean(self, axis: str, window: int) -> list[float | None]:
+        """Right-aligned (trailing) rolling mean over a single axis.
+
+        For each position ``i``, the window covers ``series[i - window + 1 : i + 1]``.
+        Output positions ``0 .. window - 2`` are always ``None`` (the
+        window does not yet fit). For positions ``i >= window - 1``,
+        emits the mean of the defined values inside the window when at
+        least ``ceil(window / 2)`` of them are defined; otherwise ``None``.
+
+        ``window > len(self)`` produces a list of all ``None``.
+        """
+        self._validate_axis(axis)
+        self._validate_window(window)
+        return self._rolling(self.axis_series(axis), window, op="mean")
+
+    def rolling_std(self, axis: str, window: int) -> list[float | None]:
+        """Right-aligned (trailing) rolling sample std (``ddof=1``).
+
+        Same windowing and ``ceil(window / 2)`` rule as
+        :meth:`rolling_mean`. Additionally, a window with fewer than two
+        defined values emits ``None`` (sample std is undefined).
+        """
+        self._validate_axis(axis)
+        self._validate_window(window)
+        return self._rolling(self.axis_series(axis), window, op="std")
+
+    def summary(self) -> dict[str, dict[str, float | int | None]]:
+        """One-shot per-axis report.
+
+        Returns a dict ``{axis: {metric: value}}`` where ``metric`` is one
+        of ``n_total`` (``int``), ``n_defined`` (``int``), ``mean``,
+        ``std``, ``drift``, ``volatility``, ``path_length``. Numeric
+        metrics are ``float`` or ``None`` following the same mosaic
+        dropout rules as the standalone methods. ``mean`` and ``std`` are
+        computed over the raw values; ``volatility`` over the velocities.
+        """
+        out: dict[str, dict[str, float | int | None]] = {}
+        n_total = len(self._snapshots)
+        for axis in self._axes:
+            series = self.axis_series(axis)
+            defined = [v for v in series if v is not None]
+            n_defined = len(defined)
+            if n_defined == 0:
+                mean_v: float | None = None
+            else:
+                mean_v = float(sum(defined) / n_defined)
+            if n_defined >= 2:
+                mu = sum(defined) / n_defined
+                var = sum((v - mu) ** 2 for v in defined) / (n_defined - 1)
+                std_v: float | None = float(math.sqrt(var))
+            else:
+                std_v = None
+            out[axis] = {
+                "n_total": n_total,
+                "n_defined": n_defined,
+                "mean": mean_v,
+                "std": std_v,
+                "drift": self._drift_for(axis),
+                "volatility": self._volatility_for(axis),
+                "path_length": self._path_length_for(axis),
+            }
+        return out
+
+    # ------------------------------------------------------------------
+    # Internal helpers (algebra primitives)
+    # ------------------------------------------------------------------
+
+    def _validate_axis(self, axis: str) -> None:
+        if axis not in _CANONICAL_AXES:
+            raise ValueError(
+                f"Unknown axis {axis!r}. Canonical axes: {_CANONICAL_AXES}"
+            )
+
+    def _validate_window(self, window: int) -> None:
+        if isinstance(window, bool) or not isinstance(window, int):
+            raise TypeError(
+                f"window must be a positive int, got {type(window).__name__}"
+            )
+        if window < 1:
+            raise ValueError(f"window must be >= 1, got {window}")
+
+    def _velocities_for(self, axis: str) -> list[float | None]:
+        series = self.axis_series(axis)
+        if len(series) < 2:
+            return []
+        out: list[float | None] = []
+        for prev, curr in zip(series[:-1], series[1:]):
+            if prev is None or curr is None:
+                out.append(None)
+            else:
+                out.append(float(curr - prev))
+        return out
+
+    def _accelerations_for(self, axis: str) -> list[float | None]:
+        velocities = self._velocities_for(axis)
+        if len(velocities) < 2:
+            return []
+        out: list[float | None] = []
+        for prev, curr in zip(velocities[:-1], velocities[1:]):
+            if prev is None or curr is None:
+                out.append(None)
+            else:
+                out.append(float(curr - prev))
+        return out
+
+    def _drift_for(self, axis: str) -> float | None:
+        series = self.axis_series(axis)
+        defined = [v for v in series if v is not None]
+        if len(defined) < 2:
+            return None
+        return float(defined[-1] - defined[0])
+
+    def _volatility_for(self, axis: str) -> float | None:
+        velocities = self._velocities_for(axis)
+        defined = [v for v in velocities if v is not None]
+        if len(defined) < 2:
+            return None
+        mu = sum(defined) / len(defined)
+        var = sum((v - mu) ** 2 for v in defined) / (len(defined) - 1)
+        return float(math.sqrt(var))
+
+    def _path_length_for(self, axis: str) -> float | None:
+        velocities = self._velocities_for(axis)
+        defined_abs = [abs(v) for v in velocities if v is not None]
+        if not defined_abs:
+            return None
+        return float(sum(defined_abs))
+
+    def _rolling(
+        self,
+        series: list[float | None],
+        window: int,
+        op: str,
+    ) -> list[float | None]:
+        n = len(series)
+        min_defined = math.ceil(window / 2)
+        out: list[float | None] = []
+        for i in range(n):
+            if i < window - 1:
+                out.append(None)
+                continue
+            window_slice = series[i - window + 1 : i + 1]
+            defined = [v for v in window_slice if v is not None]
+            if len(defined) < min_defined:
+                out.append(None)
+                continue
+            if op == "mean":
+                out.append(float(sum(defined) / len(defined)))
+            elif op == "std":
+                if len(defined) < 2:
+                    out.append(None)
+                    continue
+                mu = sum(defined) / len(defined)
+                var = sum((v - mu) ** 2 for v in defined) / (len(defined) - 1)
+                out.append(float(math.sqrt(var)))
+            else:  # pragma: no cover — guarded by callers
+                raise ValueError(f"unknown rolling op {op!r}")
+        return out
+
     def to_dict(self) -> dict[str, list[float | None]]:
         """Serialise the trajectory to a dictionary of axis-wise series.
 

@@ -181,3 +181,12 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 *.canvas.tsx
+
+# Agent briefs and working notes
+#  AGENT_BRIEF.md is a temporary, agent-only working document used to register
+#  proposals and context between sessions. It must never be committed.
+#  WORKING_MANIFEST.md is the private working agreement between human and agent
+#  about how to operate this project (public lib vs commercial pipeline). It
+#  is a shared reminder, not a public document.
+AGENT_BRIEF.md
+WORKING_MANIFEST.md

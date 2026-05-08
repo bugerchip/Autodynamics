@@ -1,0 +1,568 @@
+==============================================================================
+Autodynamics v0.2.0a0 — cross-release infrastructure check
+==============================================================================
+Autonometrics root: C:\Users\Usuario\Documents\GitHub\Autonometrics
+Output directory:   C:\Users\Usuario\Documents\GitHub\Autodynamics\docs\benchmarks
+
+[load] v0.5.0a0: C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.5.0a0.csv
+        groups: 15
+          - (ECASystem, rule=30) length=5
+          - (ECASystem, rule=90) length=5
+          - (ECASystem, rule=110) length=5
+          - (ECASystem, rule=184) length=5
+          - (ECASystem, rule=250) length=5
+          - (KauffmanNetwork, coupling=0.0) length=5
+          - (KauffmanNetwork, coupling=0.33) length=5
+          - (KauffmanNetwork, coupling=0.5) length=5
+          - (KauffmanNetwork, coupling=0.67) length=5
+          - (KauffmanNetwork, coupling=1.0) length=5
+          - (PeriodicCycle, period=2) length=3
+          - (PeriodicCycle, period=4) length=3
+          - (PeriodicCycle, period=8) length=3
+          - (SimpleAutomaton, self_generated) length=5
+          - (SimpleAutomaton, external) length=5
+[load] v0.6.0a0: C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.6.0a0.csv
+        groups: 15
+          - (ECASystem, rule=30) length=5
+          - (ECASystem, rule=90) length=5
+          - (ECASystem, rule=110) length=5
+          - (ECASystem, rule=184) length=5
+          - (ECASystem, rule=250) length=5
+          - (KauffmanNetwork, coupling=0.0) length=5
+          - (KauffmanNetwork, coupling=0.33) length=5
+          - (KauffmanNetwork, coupling=0.5) length=5
+          - (KauffmanNetwork, coupling=0.67) length=5
+          - (KauffmanNetwork, coupling=1.0) length=5
+          - (PeriodicCycle, period=2) length=3
+          - (PeriodicCycle, period=4) length=3
+          - (PeriodicCycle, period=8) length=3
+          - (SimpleAutomaton, self_generated) length=5
+          - (SimpleAutomaton, external) length=5
+[load] v0.7.0a0: C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.7.0a0.csv
+        groups: 15
+          - (ECASystem, rule=30) length=5
+          - (ECASystem, rule=90) length=5
+          - (ECASystem, rule=110) length=5
+          - (ECASystem, rule=184) length=5
+          - (ECASystem, rule=250) length=5
+          - (KauffmanNetwork, coupling=0.0) length=5
+          - (KauffmanNetwork, coupling=0.33) length=5
+          - (KauffmanNetwork, coupling=0.5) length=5
+          - (KauffmanNetwork, coupling=0.67) length=5
+          - (KauffmanNetwork, coupling=1.0) length=5
+          - (PeriodicCycle, period=2) length=3
+          - (PeriodicCycle, period=4) length=3
+          - (PeriodicCycle, period=8) length=3
+          - (SimpleAutomaton, self_generated) length=5
+          - (SimpleAutomaton, external) length=5
+[load] v0.7.2a0: C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.7.2a0.csv
+        groups: 15
+          - (ECASystem, rule=30) length=30
+          - (ECASystem, rule=90) length=30
+          - (ECASystem, rule=110) length=30
+          - (ECASystem, rule=184) length=30
+          - (ECASystem, rule=250) length=30
+          - (KauffmanNetwork, coupling=0.0) length=30
+          - (KauffmanNetwork, coupling=0.33) length=30
+          - (KauffmanNetwork, coupling=0.5) length=30
+          - (KauffmanNetwork, coupling=0.67) length=30
+          - (KauffmanNetwork, coupling=1.0) length=30
+          - (PeriodicCycle, period=2) length=15
+          - (PeriodicCycle, period=4) length=15
+          - (PeriodicCycle, period=8) length=15
+          - (SimpleAutomaton, self_generated) length=30
+          - (SimpleAutomaton, external) length=30
+[load] v0.8.0a0: C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.8.0a0.csv
+        groups: 31
+          - (ECASystem, rule=30) length=30
+          - (ECASystem, rule=90) length=30
+          - (ECASystem, rule=110) length=30
+          - (ECASystem, rule=184) length=30
+          - (ECASystem, rule=250) length=30
+          - (KauffmanNetwork, coupling=0.0) length=30
+          - (KauffmanNetwork, coupling=0.33) length=30
+          - (KauffmanNetwork, coupling=0.5) length=30
+          - (KauffmanNetwork, coupling=0.67) length=30
+          - (KauffmanNetwork, coupling=1.0) length=30
+          - (PeriodicCycle, period=2) length=15
+          - (PeriodicCycle, period=4) length=15
+          - (PeriodicCycle, period=8) length=15
+          - (SimpleAutomaton, self_generated) length=30
+          - (SimpleAutomaton, external) length=30
+          - (PromisedCycle, period=2,alphabet=4,p_noise=0.0) length=15
+          - (PromisedCycle, period=2,alphabet=4,p_noise=0.25) length=15
+          - (PromisedCycle, period=2,alphabet=4,p_noise=0.5) length=15
+          - (PromisedCycle, period=2,alphabet=4,p_noise=0.75) length=15
+          - (PromisedCycle, period=2,alphabet=4,p_noise=1.0) length=15
+          - (PromisedCycle, period=4,alphabet=4,p_noise=0.0) length=15
+          - (PromisedCycle, period=4,alphabet=4,p_noise=0.25) length=15
+          - (PromisedCycle, period=4,alphabet=4,p_noise=0.5) length=15
+          - (PromisedCycle, period=4,alphabet=4,p_noise=0.75) length=15
+          - (PromisedCycle, period=4,alphabet=4,p_noise=1.0) length=15
+          - (PromisedCycle, period=4,alphabet=8,p_noise=0.0) length=15
+          - (PromisedCycle, period=4,alphabet=8,p_noise=0.25) length=15
+          - (PromisedCycle, period=4,alphabet=8,p_noise=0.5) length=15
+          - (PromisedCycle, period=4,alphabet=8,p_noise=0.75) length=15
+          - (PromisedCycle, period=4,alphabet=8,p_noise=1.0) length=15
+          - (PromisedCycle, adversarial,period=4) length=15
+
+Per-axis summary aggregated by (release, class, params, axis):
+------------------------------------------------------------------------------
+release, class, params, axis, n_total, n_defined, mean, std, drift, volatility, path_length
+v0.5.0a0, ECASystem, rule=30, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, ECASystem, rule=30, memory, 5, 5, 0.146652, 0.025729, -0.014013, 0.042282, 0.117185
+v0.5.0a0, ECASystem, rule=30, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=30, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=30, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=90, closure, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=90, memory, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=90, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=90, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=90, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=110, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, ECASystem, rule=110, memory, 5, 5, 0.569203, 0.036787, 0.009418, 0.073873, 0.243130
+v0.5.0a0, ECASystem, rule=110, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=110, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=110, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=184, closure, 5, 2, 1.000000, 0.000000, 0.000000, None, 0.000000
+v0.5.0a0, ECASystem, rule=184, memory, 5, 2, 0.425790, 0.004844, 0.006851, None, 0.006851
+v0.5.0a0, ECASystem, rule=184, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=184, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=184, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=250, closure, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=250, memory, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=250, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=250, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, ECASystem, rule=250, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.0, closure, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.0, memory, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.0, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.0, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.0, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.33, closure, 5, 4, 0.790576, 0.355481, 0.010414, 0.398536, 0.739393
+v0.5.0a0, KauffmanNetwork, coupling=0.33, memory, 5, 4, 0.666160, 0.463483, -0.018263, 1.160362, 1.640999
+v0.5.0a0, KauffmanNetwork, coupling=0.33, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.33, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.33, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.5, closure, 5, 4, 0.790576, 0.355481, 0.010414, 0.398536, 0.739393
+v0.5.0a0, KauffmanNetwork, coupling=0.5, memory, 5, 4, 0.666160, 0.463483, -0.018263, 1.160362, 1.640999
+v0.5.0a0, KauffmanNetwork, coupling=0.5, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.5, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.5, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.67, closure, 5, 4, 0.234937, 0.294639, -0.311972, 0.466851, 0.927096
+v0.5.0a0, KauffmanNetwork, coupling=0.67, memory, 5, 4, 0.448915, 0.101441, -0.001943, 0.203665, 0.410097
+v0.5.0a0, KauffmanNetwork, coupling=0.67, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.67, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=0.67, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=1.0, closure, 5, 5, 0.138067, 0.169985, 0.003168, 0.248766, 0.740574
+v0.5.0a0, KauffmanNetwork, coupling=1.0, memory, 5, 5, 0.487984, 0.024472, 0.054695, 0.025020, 0.061515
+v0.5.0a0, KauffmanNetwork, coupling=1.0, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=1.0, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, KauffmanNetwork, coupling=1.0, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=2, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, PeriodicCycle, period=2, memory, 3, 3, 0.956338, 0.005874, 0.006464, 0.012014, 0.016990
+v0.5.0a0, PeriodicCycle, period=2, constraint, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=2, persistence, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=2, coherence, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=4, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, PeriodicCycle, period=4, memory, 3, 3, 0.977676, 0.003069, 0.003368, 0.006283, 0.008886
+v0.5.0a0, PeriodicCycle, period=4, constraint, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=4, persistence, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=4, coherence, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=8, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, PeriodicCycle, period=8, memory, 3, 3, 0.985004, 0.002076, 0.002277, 0.004253, 0.006015
+v0.5.0a0, PeriodicCycle, period=8, constraint, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=8, persistence, 3, 0, None, None, None, None, None
+v0.5.0a0, PeriodicCycle, period=8, coherence, 3, 0, None, None, None, None, None
+v0.5.0a0, SimpleAutomaton, self_generated, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, SimpleAutomaton, self_generated, memory, 5, 5, 0.977473, 0.000000, 0.000000, 0.000000, 0.000000
+v0.5.0a0, SimpleAutomaton, self_generated, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, SimpleAutomaton, self_generated, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, SimpleAutomaton, self_generated, coherence, 5, 0, None, None, None, None, None
+v0.5.0a0, SimpleAutomaton, external, closure, 5, 5, 0.015432, 0.004474, 0.006754, 0.004698, 0.015112
+v0.5.0a0, SimpleAutomaton, external, memory, 5, 5, 0.425323, 0.050672, -0.043959, 0.102778, 0.312235
+v0.5.0a0, SimpleAutomaton, external, constraint, 5, 0, None, None, None, None, None
+v0.5.0a0, SimpleAutomaton, external, persistence, 5, 0, None, None, None, None, None
+v0.5.0a0, SimpleAutomaton, external, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=30, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, ECASystem, rule=30, memory, 5, 5, 0.146652, 0.025729, -0.014013, 0.042282, 0.117185
+v0.6.0a0, ECASystem, rule=30, constraint, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, ECASystem, rule=30, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=30, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=90, closure, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=90, memory, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=90, constraint, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=90, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=90, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=110, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, ECASystem, rule=110, memory, 5, 5, 0.569203, 0.036787, 0.009418, 0.073873, 0.243130
+v0.6.0a0, ECASystem, rule=110, constraint, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, ECASystem, rule=110, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=110, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=184, closure, 5, 2, 1.000000, 0.000000, 0.000000, None, 0.000000
+v0.6.0a0, ECASystem, rule=184, memory, 5, 2, 0.425790, 0.004844, 0.006851, None, 0.006851
+v0.6.0a0, ECASystem, rule=184, constraint, 5, 2, 1.000000, 0.000000, 0.000000, None, 0.000000
+v0.6.0a0, ECASystem, rule=184, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=184, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=250, closure, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=250, memory, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=250, constraint, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=250, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, ECASystem, rule=250, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.0, closure, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.0, memory, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.0, constraint, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.0, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.0, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.33, closure, 5, 4, 0.790576, 0.355481, 0.010414, 0.398536, 0.739393
+v0.6.0a0, KauffmanNetwork, coupling=0.33, memory, 5, 4, 0.666160, 0.463483, -0.018263, 1.160362, 1.640999
+v0.6.0a0, KauffmanNetwork, coupling=0.33, constraint, 5, 4, 0.775000, 0.095743, -0.100000, 0.141421, 0.200000
+v0.6.0a0, KauffmanNetwork, coupling=0.33, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.33, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.5, closure, 5, 4, 0.790576, 0.355481, 0.010414, 0.398536, 0.739393
+v0.6.0a0, KauffmanNetwork, coupling=0.5, memory, 5, 4, 0.666160, 0.463483, -0.018263, 1.160362, 1.640999
+v0.6.0a0, KauffmanNetwork, coupling=0.5, constraint, 5, 4, 0.775000, 0.095743, -0.100000, 0.141421, 0.200000
+v0.6.0a0, KauffmanNetwork, coupling=0.5, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.5, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.67, closure, 5, 4, 0.234937, 0.294639, -0.311972, 0.466851, 0.927096
+v0.6.0a0, KauffmanNetwork, coupling=0.67, memory, 5, 4, 0.448915, 0.101441, -0.001943, 0.203665, 0.410097
+v0.6.0a0, KauffmanNetwork, coupling=0.67, constraint, 5, 4, 0.975000, 0.050000, 0.000000, 0.100000, 0.200000
+v0.6.0a0, KauffmanNetwork, coupling=0.67, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=0.67, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=1.0, closure, 5, 5, 0.138067, 0.169985, 0.003168, 0.248766, 0.740574
+v0.6.0a0, KauffmanNetwork, coupling=1.0, memory, 5, 5, 0.487984, 0.024472, 0.054695, 0.025020, 0.061515
+v0.6.0a0, KauffmanNetwork, coupling=1.0, constraint, 5, 5, 0.860000, 0.151658, 0.000000, 0.216025, 0.600000
+v0.6.0a0, KauffmanNetwork, coupling=1.0, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, KauffmanNetwork, coupling=1.0, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, PeriodicCycle, period=2, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, PeriodicCycle, period=2, memory, 3, 3, 0.956338, 0.005874, 0.006464, 0.012014, 0.016990
+v0.6.0a0, PeriodicCycle, period=2, constraint, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, PeriodicCycle, period=2, persistence, 3, 0, None, None, None, None, None
+v0.6.0a0, PeriodicCycle, period=2, coherence, 3, 0, None, None, None, None, None
+v0.6.0a0, PeriodicCycle, period=4, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, PeriodicCycle, period=4, memory, 3, 3, 0.977676, 0.003069, 0.003368, 0.006283, 0.008886
+v0.6.0a0, PeriodicCycle, period=4, constraint, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, PeriodicCycle, period=4, persistence, 3, 0, None, None, None, None, None
+v0.6.0a0, PeriodicCycle, period=4, coherence, 3, 0, None, None, None, None, None
+v0.6.0a0, PeriodicCycle, period=8, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, PeriodicCycle, period=8, memory, 3, 3, 0.985004, 0.002076, 0.002277, 0.004253, 0.006015
+v0.6.0a0, PeriodicCycle, period=8, constraint, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, PeriodicCycle, period=8, persistence, 3, 0, None, None, None, None, None
+v0.6.0a0, PeriodicCycle, period=8, coherence, 3, 0, None, None, None, None, None
+v0.6.0a0, SimpleAutomaton, self_generated, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, SimpleAutomaton, self_generated, memory, 5, 5, 0.977473, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, SimpleAutomaton, self_generated, constraint, 5, 5, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, SimpleAutomaton, self_generated, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, SimpleAutomaton, self_generated, coherence, 5, 0, None, None, None, None, None
+v0.6.0a0, SimpleAutomaton, external, closure, 5, 5, 0.015432, 0.004474, 0.006754, 0.004698, 0.015112
+v0.6.0a0, SimpleAutomaton, external, memory, 5, 5, 0.425323, 0.050672, -0.043959, 0.102778, 0.312235
+v0.6.0a0, SimpleAutomaton, external, constraint, 5, 5, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.6.0a0, SimpleAutomaton, external, persistence, 5, 0, None, None, None, None, None
+v0.6.0a0, SimpleAutomaton, external, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=30, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, ECASystem, rule=30, memory, 5, 5, 0.146652, 0.025729, -0.014013, 0.042282, 0.117185
+v0.7.0a0, ECASystem, rule=30, constraint, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, ECASystem, rule=30, persistence, 5, 5, 0.025154, 0.018083, -0.004125, 0.036764, 0.106045
+v0.7.0a0, ECASystem, rule=30, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=90, closure, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=90, memory, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=90, constraint, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=90, persistence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=90, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=110, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, ECASystem, rule=110, memory, 5, 5, 0.569203, 0.036787, 0.009418, 0.073873, 0.243130
+v0.7.0a0, ECASystem, rule=110, constraint, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, ECASystem, rule=110, persistence, 5, 5, 0.073696, 0.050230, 0.112100, 0.038229, 0.126402
+v0.7.0a0, ECASystem, rule=110, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=184, closure, 5, 2, 1.000000, 0.000000, 0.000000, None, 0.000000
+v0.7.0a0, ECASystem, rule=184, memory, 5, 2, 0.425790, 0.004844, 0.006851, None, 0.006851
+v0.7.0a0, ECASystem, rule=184, constraint, 5, 2, 1.000000, 0.000000, 0.000000, None, 0.000000
+v0.7.0a0, ECASystem, rule=184, persistence, 5, 2, 0.731492, 0.078897, 0.111577, None, 0.111577
+v0.7.0a0, ECASystem, rule=184, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=250, closure, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=250, memory, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=250, constraint, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=250, persistence, 5, 0, None, None, None, None, None
+v0.7.0a0, ECASystem, rule=250, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.0, closure, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.0, memory, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.0, constraint, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.0, persistence, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.0, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.33, closure, 5, 4, 0.790576, 0.355481, 0.010414, 0.398536, 0.739393
+v0.7.0a0, KauffmanNetwork, coupling=0.33, memory, 5, 4, 0.666160, 0.463483, -0.018263, 1.160362, 1.640999
+v0.7.0a0, KauffmanNetwork, coupling=0.33, constraint, 5, 4, 0.775000, 0.095743, -0.100000, 0.141421, 0.200000
+v0.7.0a0, KauffmanNetwork, coupling=0.33, persistence, 5, 4, 0.560410, 0.510486, -0.986328, 1.233680, 1.744687
+v0.7.0a0, KauffmanNetwork, coupling=0.33, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.5, closure, 5, 4, 0.790576, 0.355481, 0.010414, 0.398536, 0.739393
+v0.7.0a0, KauffmanNetwork, coupling=0.5, memory, 5, 4, 0.666160, 0.463483, -0.018263, 1.160362, 1.640999
+v0.7.0a0, KauffmanNetwork, coupling=0.5, constraint, 5, 4, 0.775000, 0.095743, -0.100000, 0.141421, 0.200000
+v0.7.0a0, KauffmanNetwork, coupling=0.5, persistence, 5, 4, 0.560410, 0.510486, -0.986328, 1.233680, 1.744687
+v0.7.0a0, KauffmanNetwork, coupling=0.5, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=0.67, closure, 5, 4, 0.234937, 0.294639, -0.311972, 0.466851, 0.927096
+v0.7.0a0, KauffmanNetwork, coupling=0.67, memory, 5, 4, 0.448915, 0.101441, -0.001943, 0.203665, 0.410097
+v0.7.0a0, KauffmanNetwork, coupling=0.67, constraint, 5, 4, 0.975000, 0.050000, 0.000000, 0.100000, 0.200000
+v0.7.0a0, KauffmanNetwork, coupling=0.67, persistence, 5, 4, 0.271880, 0.464182, 0.125000, 0.965222, 2.050040
+v0.7.0a0, KauffmanNetwork, coupling=0.67, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, KauffmanNetwork, coupling=1.0, closure, 5, 5, 0.138067, 0.169985, 0.003168, 0.248766, 0.740574
+v0.7.0a0, KauffmanNetwork, coupling=1.0, memory, 5, 5, 0.487984, 0.024472, 0.054695, 0.025020, 0.061515
+v0.7.0a0, KauffmanNetwork, coupling=1.0, constraint, 5, 5, 0.860000, 0.151658, 0.000000, 0.216025, 0.600000
+v0.7.0a0, KauffmanNetwork, coupling=1.0, persistence, 5, 5, 0.504992, 0.500125, 1.000000, 0.866265, 3.000000
+v0.7.0a0, KauffmanNetwork, coupling=1.0, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, PeriodicCycle, period=2, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=2, memory, 3, 3, 0.956338, 0.005874, 0.006464, 0.012014, 0.016990
+v0.7.0a0, PeriodicCycle, period=2, constraint, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=2, persistence, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=2, coherence, 3, 0, None, None, None, None, None
+v0.7.0a0, PeriodicCycle, period=4, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=4, memory, 3, 3, 0.977676, 0.003069, 0.003368, 0.006283, 0.008886
+v0.7.0a0, PeriodicCycle, period=4, constraint, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=4, persistence, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=4, coherence, 3, 0, None, None, None, None, None
+v0.7.0a0, PeriodicCycle, period=8, closure, 3, 3, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=8, memory, 3, 3, 0.985004, 0.002076, 0.002277, 0.004253, 0.006015
+v0.7.0a0, PeriodicCycle, period=8, constraint, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=8, persistence, 3, 3, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, PeriodicCycle, period=8, coherence, 3, 0, None, None, None, None, None
+v0.7.0a0, SimpleAutomaton, self_generated, closure, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, SimpleAutomaton, self_generated, memory, 5, 5, 0.977473, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, SimpleAutomaton, self_generated, constraint, 5, 5, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, SimpleAutomaton, self_generated, persistence, 5, 5, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, SimpleAutomaton, self_generated, coherence, 5, 0, None, None, None, None, None
+v0.7.0a0, SimpleAutomaton, external, closure, 5, 5, 0.015432, 0.004474, 0.006754, 0.004698, 0.015112
+v0.7.0a0, SimpleAutomaton, external, memory, 5, 5, 0.425323, 0.050672, -0.043959, 0.102778, 0.312235
+v0.7.0a0, SimpleAutomaton, external, constraint, 5, 5, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, SimpleAutomaton, external, persistence, 5, 5, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.0a0, SimpleAutomaton, external, coherence, 5, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=30, closure, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, ECASystem, rule=30, memory, 30, 30, 0.140808, 0.021403, -0.028908, 0.028665, 0.667590
+v0.7.2a0, ECASystem, rule=30, constraint, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, ECASystem, rule=30, persistence, 30, 30, 0.022197, 0.024066, -0.027343, 0.037413, 0.849097
+v0.7.2a0, ECASystem, rule=30, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=90, closure, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=90, memory, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=90, constraint, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=90, persistence, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=90, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=110, closure, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, ECASystem, rule=110, memory, 30, 30, 0.568607, 0.052282, 0.177258, 0.058647, 1.277268
+v0.7.2a0, ECASystem, rule=110, constraint, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, ECASystem, rule=110, persistence, 30, 30, 0.098922, 0.072581, 0.333591, 0.076163, 1.590601
+v0.7.2a0, ECASystem, rule=110, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=184, closure, 30, 8, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, ECASystem, rule=184, memory, 30, 8, 0.426324, 0.026492, -0.028820, 0.038358, 0.067948
+v0.7.2a0, ECASystem, rule=184, constraint, 30, 8, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, ECASystem, rule=184, persistence, 30, 8, 0.801372, 0.104599, 0.173492, 0.094948, 0.134277
+v0.7.2a0, ECASystem, rule=184, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=250, closure, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=250, memory, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=250, constraint, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=250, persistence, 30, 0, None, None, None, None, None
+v0.7.2a0, ECASystem, rule=250, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.0, closure, 30, 1, 1.000000, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.0, memory, 30, 1, 1.000000, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.0, constraint, 30, 1, 0.800000, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.0, persistence, 30, 1, 0.000000, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.0, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.33, closure, 30, 16, 0.581328, 0.480864, -0.838489, 0.799947, 5.578773
+v0.7.2a0, KauffmanNetwork, coupling=0.33, memory, 30, 16, 0.675058, 0.348470, -0.020265, 0.510488, 3.959399
+v0.7.2a0, KauffmanNetwork, coupling=0.33, constraint, 30, 16, 0.812500, 0.150000, 0.100000, 0.259808, 1.700000
+v0.7.2a0, KauffmanNetwork, coupling=0.33, persistence, 30, 16, 0.274309, 0.426482, -0.785807, 0.656577, 3.891985
+v0.7.2a0, KauffmanNetwork, coupling=0.33, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.5, closure, 30, 16, 0.581328, 0.480864, -0.838489, 0.799947, 5.578773
+v0.7.2a0, KauffmanNetwork, coupling=0.5, memory, 30, 16, 0.675058, 0.348470, -0.020265, 0.510488, 3.959399
+v0.7.2a0, KauffmanNetwork, coupling=0.5, constraint, 30, 16, 0.812500, 0.150000, 0.100000, 0.259808, 1.700000
+v0.7.2a0, KauffmanNetwork, coupling=0.5, persistence, 30, 16, 0.274309, 0.426482, -0.785807, 0.656577, 3.891985
+v0.7.2a0, KauffmanNetwork, coupling=0.5, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=0.67, closure, 30, 20, 0.433052, 0.383326, 0.144206, 0.544292, 6.768165
+v0.7.2a0, KauffmanNetwork, coupling=0.67, memory, 30, 20, 0.491247, 0.267016, 0.000000, 0.352879, 3.919002
+v0.7.2a0, KauffmanNetwork, coupling=0.67, constraint, 30, 20, 0.855000, 0.163755, -0.100000, 0.252569, 2.700000
+v0.7.2a0, KauffmanNetwork, coupling=0.67, persistence, 30, 20, 0.227506, 0.402209, 0.000000, 0.538264, 5.291870
+v0.7.2a0, KauffmanNetwork, coupling=0.67, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, KauffmanNetwork, coupling=1.0, closure, 30, 21, 0.195536, 0.247975, 0.081900, 0.261265, 3.117700
+v0.7.2a0, KauffmanNetwork, coupling=1.0, memory, 30, 21, 0.606041, 0.272519, 0.548456, 0.362948, 3.962171
+v0.7.2a0, KauffmanNetwork, coupling=1.0, constraint, 30, 21, 0.861905, 0.135927, 0.300000, 0.181720, 1.700000
+v0.7.2a0, KauffmanNetwork, coupling=1.0, persistence, 30, 21, 0.563057, 0.387986, 0.040039, 0.625372, 7.257468
+v0.7.2a0, KauffmanNetwork, coupling=1.0, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, PeriodicCycle, period=2, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=2, memory, 15, 15, 0.953836, 0.007440, -0.000147, 0.008205, 0.094971
+v0.7.2a0, PeriodicCycle, period=2, constraint, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=2, persistence, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=2, coherence, 15, 0, None, None, None, None, None
+v0.7.2a0, PeriodicCycle, period=4, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=4, memory, 15, 15, 0.976359, 0.003908, -0.000077, 0.004306, 0.049791
+v0.7.2a0, PeriodicCycle, period=4, constraint, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=4, persistence, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=4, coherence, 15, 0, None, None, None, None, None
+v0.7.2a0, PeriodicCycle, period=8, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=8, memory, 15, 15, 0.984111, 0.002649, -0.000052, 0.002918, 0.033732
+v0.7.2a0, PeriodicCycle, period=8, constraint, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=8, persistence, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, PeriodicCycle, period=8, coherence, 15, 0, None, None, None, None, None
+v0.7.2a0, SimpleAutomaton, self_generated, closure, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, SimpleAutomaton, self_generated, memory, 30, 30, 0.977473, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, SimpleAutomaton, self_generated, constraint, 30, 30, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, SimpleAutomaton, self_generated, persistence, 30, 30, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, SimpleAutomaton, self_generated, coherence, 30, 0, None, None, None, None, None
+v0.7.2a0, SimpleAutomaton, external, closure, 30, 30, 0.016701, 0.004407, 0.007921, 0.006020, 0.127555
+v0.7.2a0, SimpleAutomaton, external, memory, 30, 30, 0.395124, 0.048696, -0.084462, 0.070286, 1.637828
+v0.7.2a0, SimpleAutomaton, external, constraint, 30, 30, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, SimpleAutomaton, external, persistence, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.7.2a0, SimpleAutomaton, external, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=30, closure, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, ECASystem, rule=30, memory, 30, 30, 0.140808, 0.021403, -0.028908, 0.028665, 0.667590
+v0.8.0a0, ECASystem, rule=30, constraint, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, ECASystem, rule=30, persistence, 30, 30, 0.022197, 0.024066, -0.027343, 0.037413, 0.849097
+v0.8.0a0, ECASystem, rule=30, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=90, closure, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=90, memory, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=90, constraint, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=90, persistence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=90, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=110, closure, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, ECASystem, rule=110, memory, 30, 30, 0.568607, 0.052282, 0.177258, 0.058647, 1.277268
+v0.8.0a0, ECASystem, rule=110, constraint, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, ECASystem, rule=110, persistence, 30, 30, 0.098922, 0.072581, 0.333591, 0.076163, 1.590601
+v0.8.0a0, ECASystem, rule=110, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=184, closure, 30, 8, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, ECASystem, rule=184, memory, 30, 8, 0.426324, 0.026492, -0.028820, 0.038358, 0.067948
+v0.8.0a0, ECASystem, rule=184, constraint, 30, 8, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, ECASystem, rule=184, persistence, 30, 8, 0.801372, 0.104599, 0.173492, 0.094948, 0.134277
+v0.8.0a0, ECASystem, rule=184, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=250, closure, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=250, memory, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=250, constraint, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=250, persistence, 30, 0, None, None, None, None, None
+v0.8.0a0, ECASystem, rule=250, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.0, closure, 30, 1, 1.000000, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.0, memory, 30, 1, 1.000000, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.0, constraint, 30, 1, 0.800000, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.0, persistence, 30, 1, 0.000000, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.0, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.33, closure, 30, 16, 0.581328, 0.480864, -0.838489, 0.799947, 5.578773
+v0.8.0a0, KauffmanNetwork, coupling=0.33, memory, 30, 16, 0.675058, 0.348470, -0.020265, 0.510488, 3.959399
+v0.8.0a0, KauffmanNetwork, coupling=0.33, constraint, 30, 16, 0.812500, 0.150000, 0.100000, 0.259808, 1.700000
+v0.8.0a0, KauffmanNetwork, coupling=0.33, persistence, 30, 16, 0.274309, 0.426482, -0.785807, 0.656577, 3.891985
+v0.8.0a0, KauffmanNetwork, coupling=0.33, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.5, closure, 30, 16, 0.581328, 0.480864, -0.838489, 0.799947, 5.578773
+v0.8.0a0, KauffmanNetwork, coupling=0.5, memory, 30, 16, 0.675058, 0.348470, -0.020265, 0.510488, 3.959399
+v0.8.0a0, KauffmanNetwork, coupling=0.5, constraint, 30, 16, 0.812500, 0.150000, 0.100000, 0.259808, 1.700000
+v0.8.0a0, KauffmanNetwork, coupling=0.5, persistence, 30, 16, 0.274309, 0.426482, -0.785807, 0.656577, 3.891985
+v0.8.0a0, KauffmanNetwork, coupling=0.5, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=0.67, closure, 30, 20, 0.433052, 0.383326, 0.144206, 0.544292, 6.768165
+v0.8.0a0, KauffmanNetwork, coupling=0.67, memory, 30, 20, 0.491247, 0.267016, 0.000000, 0.352879, 3.919002
+v0.8.0a0, KauffmanNetwork, coupling=0.67, constraint, 30, 20, 0.855000, 0.163755, -0.100000, 0.252569, 2.700000
+v0.8.0a0, KauffmanNetwork, coupling=0.67, persistence, 30, 20, 0.227506, 0.402209, 0.000000, 0.538264, 5.291870
+v0.8.0a0, KauffmanNetwork, coupling=0.67, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, KauffmanNetwork, coupling=1.0, closure, 30, 21, 0.195536, 0.247975, 0.081900, 0.261265, 3.117700
+v0.8.0a0, KauffmanNetwork, coupling=1.0, memory, 30, 21, 0.606041, 0.272519, 0.548456, 0.362948, 3.962171
+v0.8.0a0, KauffmanNetwork, coupling=1.0, constraint, 30, 21, 0.861905, 0.135927, 0.300000, 0.181720, 1.700000
+v0.8.0a0, KauffmanNetwork, coupling=1.0, persistence, 30, 21, 0.563057, 0.387986, 0.040039, 0.625372, 7.257468
+v0.8.0a0, KauffmanNetwork, coupling=1.0, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, PeriodicCycle, period=2, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=2, memory, 15, 15, 0.953836, 0.007440, -0.000147, 0.008205, 0.094971
+v0.8.0a0, PeriodicCycle, period=2, constraint, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=2, persistence, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=2, coherence, 15, 0, None, None, None, None, None
+v0.8.0a0, PeriodicCycle, period=4, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=4, memory, 15, 15, 0.976359, 0.003908, -0.000077, 0.004306, 0.049791
+v0.8.0a0, PeriodicCycle, period=4, constraint, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=4, persistence, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=4, coherence, 15, 0, None, None, None, None, None
+v0.8.0a0, PeriodicCycle, period=8, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=8, memory, 15, 15, 0.984111, 0.002649, -0.000052, 0.002918, 0.033732
+v0.8.0a0, PeriodicCycle, period=8, constraint, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=8, persistence, 15, 15, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PeriodicCycle, period=8, coherence, 15, 0, None, None, None, None, None
+v0.8.0a0, SimpleAutomaton, self_generated, closure, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, SimpleAutomaton, self_generated, memory, 30, 30, 0.977473, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, SimpleAutomaton, self_generated, constraint, 30, 30, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, SimpleAutomaton, self_generated, persistence, 30, 30, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, SimpleAutomaton, self_generated, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, SimpleAutomaton, external, closure, 30, 30, 0.016701, 0.004407, 0.007921, 0.006020, 0.127555
+v0.8.0a0, SimpleAutomaton, external, memory, 30, 30, 0.395124, 0.048696, -0.084462, 0.070286, 1.637828
+v0.8.0a0, SimpleAutomaton, external, constraint, 30, 30, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, SimpleAutomaton, external, persistence, 30, 30, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, SimpleAutomaton, external, coherence, 30, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.0, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.0, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.0, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.0, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.0, coherence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.25, closure, 15, 15, 0.222166, 0.017716, -0.013540, 0.023098, 0.261020
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.25, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.25, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.25, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.25, coherence, 15, 15, 0.556235, 0.023838, -0.051381, 0.033142, 0.369555
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.5, closure, 15, 15, 0.046430, 0.005155, 0.001214, 0.006826, 0.072802
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.5, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.5, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.5, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.5, coherence, 15, 15, 0.261310, 0.015594, -0.041917, 0.022387, 0.261139
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.75, closure, 15, 15, 0.005203, 0.001330, -0.000247, 0.002068, 0.023263
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.75, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.75, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.75, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=0.75, coherence, 15, 15, 0.076228, 0.011068, -0.020836, 0.016852, 0.208500
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=1.0, closure, 15, 15, 0.001599, 0.000862, 0.000307, 0.001528, 0.015289
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=1.0, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=1.0, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=1.0, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=2,alphabet=4,p_noise=1.0, coherence, 15, 15, 0.000172, 0.000265, -0.000612, 0.000352, 0.003232
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.0, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.0, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.0, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.0, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.0, coherence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.25, closure, 15, 15, 0.288079, 0.018347, 0.005061, 0.020693, 0.240541
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.25, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.25, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.25, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.25, coherence, 15, 15, 0.507286, 0.015467, -0.005778, 0.019348, 0.224444
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.5, closure, 15, 15, 0.060423, 0.005848, 0.005166, 0.009803, 0.111554
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.5, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.5, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.5, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.5, coherence, 15, 15, 0.224563, 0.009004, -0.003878, 0.015950, 0.183756
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.75, closure, 15, 15, 0.005674, 0.001700, -0.000554, 0.002145, 0.020588
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.75, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.75, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.75, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=0.75, coherence, 15, 15, 0.061946, 0.006738, -0.008247, 0.011583, 0.143309
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=1.0, closure, 15, 15, 0.001599, 0.000862, 0.000307, 0.001528, 0.015289
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=1.0, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=1.0, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=1.0, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=4,p_noise=1.0, coherence, 15, 15, 0.000180, 0.000300, 0.000704, 0.000455, 0.004248
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.0, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.0, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.0, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.0, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.0, coherence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.25, closure, 15, 15, 0.303553, 0.015395, 0.001553, 0.017039, 0.162293
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.25, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.25, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.25, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.25, coherence, 15, 15, 0.591979, 0.014252, -0.002329, 0.017171, 0.188367
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.5, closure, 15, 15, 0.078736, 0.005703, 0.003991, 0.009958, 0.113379
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.5, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.5, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.5, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.5, coherence, 15, 15, 0.296316, 0.010909, 0.000992, 0.018249, 0.209878
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.75, closure, 15, 15, 0.012261, 0.001766, -0.000208, 0.002399, 0.022886
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.75, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.75, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.75, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=0.75, coherence, 15, 15, 0.093330, 0.007934, -0.008294, 0.013525, 0.148008
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=1.0, closure, 15, 15, 0.006221, 0.001067, 0.001909, 0.001628, 0.018701
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=1.0, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=1.0, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=1.0, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, period=4,alphabet=8,p_noise=1.0, coherence, 15, 15, 0.000272, 0.000464, 0.000000, 0.000782, 0.007682
+v0.8.0a0, PromisedCycle, adversarial,period=4, closure, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, adversarial,period=4, memory, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, adversarial,period=4, constraint, 15, 0, None, None, None, None, None
+v0.8.0a0, PromisedCycle, adversarial,period=4, persistence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+v0.8.0a0, PromisedCycle, adversarial,period=4, coherence, 15, 15, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000
+
+Wrote C:\Users\Usuario\Documents\GitHub\Autodynamics\docs\benchmarks\cross_release_v0.2.0a0.csv (455 rows)
