@@ -3,7 +3,7 @@
 > **Layer 2 of 3** in the autonomy research trilogy:
 > [Autonometrics](https://github.com/bugerchip/Autonometrics) (measure) -> **Autodynamics** (explain) -> Ex-Machina (build / emulate)
 
-**Status:** Pre-alpha. Recording substrate, algebra of trajectories, generic adapters, and Granger-causal coupling primitives. No theoretical model is claimed.
+**Status:** Pre-alpha. Recording substrate, algebra of trajectories, generic adapters, Granger-causal coupling primitives, and containment-envelope primitives. No theoretical model is claimed.
 
 ## Vision
 
@@ -29,10 +29,16 @@ axis".
   graph over admitted axes), `CausalCouplingGraph`, and four scalar
   diagnostics (`symmetry_ratio`, `density`, `max_in_strength`,
   `max_out_strength`).
+- Containment envelope: `Envelope` (per-axis admissible region),
+  `Envelope.from_trajectory` (Shewhart 2-sigma calibration) and the
+  trinary verdict `ContainmentVerdict` (`INSIDE` / `OUTSIDE` /
+  `UNDEFINED`).
 - Pre-registered boundary regimes and a saturation theorem documented
   in [`docs/TRAJECTORY_DIAGNOSTICS.md`](docs/TRAJECTORY_DIAGNOSTICS.md);
   the coupling protocol is pre-registered in
-  [`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md).
+  [`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md);
+  the envelope containment protocol in
+  [`docs/ENVELOPE_DIAGNOSTICS.md`](docs/ENVELOPE_DIAGNOSTICS.md).
 
 > **Install with:** `pip install autodynamics`
 > **Import as:** `import autodynamics`
@@ -185,6 +191,58 @@ any specific Autonometrics zoo; it is a composable primitive that
 can be fed real or synthetic trajectories without bespoke threshold
 tuning.
 
+## Envelope checks
+
+A per-axis admissible region in profile space and a *trinary*
+containment verdict (`INSIDE` / `OUTSIDE` / `UNDEFINED`). The
+verdict is intentionally distinct from boolean: `False` would
+silently equate "outside the region" with "the profile did not
+report on this axis", which collapses the mosaic-dropout fielty
+preserved everywhere else in the package. `Envelope.from_trajectory`
+learns per-axis bounds from a reference trajectory using the
+Shewhart (1931) control-limit recipe applied independently per
+axis.
+
+```python
+from autodynamics import (
+    Envelope, ContainmentVerdict, ContainmentResult,
+)
+
+# Direct construction with explicit bounds
+envelope = Envelope(bounds={
+    "closure":    (0.4, 0.9),
+    "memory":     (0.0, 0.6),
+    "constraint": (0.0, 1.0),
+})
+
+# Or learn bounds from a reference trajectory
+envelope = Envelope.from_trajectory(
+    reference_trajectory,
+    width_multiplier=2.0,            # Shewhart 1931
+    axes=("closure", "memory"),       # optional; default = all
+)
+
+# Evaluate a profile (or any Mapping[axis, value])
+result = envelope.evaluate(profile)
+result.verdict           # ContainmentVerdict.INSIDE / OUTSIDE / UNDEFINED
+result.per_axis          # dict[axis, ContainmentVerdict]
+result.violated_axes     # tuple of axes outside the region
+result.undefined_axes    # tuple of axes whose value is None / NaN
+result.reasons           # human-readable reasons, one per non-INSIDE axis
+
+# Boolean shortcut: True iff verdict == INSIDE
+envelope.contains(profile)
+```
+
+The protocol (closed-interval bounds, trinary verdict,
+``OUTSIDE`` strictly dominating ``UNDEFINED`` in the aggregation,
+non-finite values treated as ``UNDEFINED`` not ``OUTSIDE``) is
+pre-registered in
+[`docs/ENVELOPE_DIAGNOSTICS.md`](docs/ENVELOPE_DIAGNOSTICS.md). It
+is **not** a claim about the "correct" admissible region for any
+specific system; the envelope is a composable primitive whose
+threshold tuning is the caller's responsibility.
+
 ## Public validation track
 
 Pre-registered, falsifiable experiments that stress the algebra
@@ -215,23 +273,34 @@ new public release cycle.
   itself is robust (93 % of admitted edges produce finite
   F-statistics); the bottleneck is the saturation pattern of the
   source zoo.
+- [`docs/ENVELOPE_VALIDATION.md`](docs/ENVELOPE_VALIDATION.md) — pre-registered
+  out-of-sample experiment learning an `Envelope.from_trajectory`
+  on the first 70 % of each group's seeds and evaluating the
+  remaining 30 %. Reproducible from
+  [`examples/envelope_validation.py`](examples/envelope_validation.py); raw
+  outputs in [`docs/benchmarks/envelope_v0.4.0a0.csv`](docs/benchmarks/envelope_v0.4.0a0.csv)
+  and the full log in
+  [`docs/benchmarks/envelope_v0.4.0a0.log.txt`](docs/benchmarks/envelope_v0.4.0a0.log.txt).
+  Verdict: CONFIRMED — across 28 non-trivial groups, 80.25 % of test
+  profiles land ``INSIDE`` and 93.63 % are not ``OUTSIDE``,
+  comfortably above the pre-registered 40 % and 70 % thresholds.
 
 ## Roadmap
 
 - `v0.1.0a0` / `v0.1.0a1`: Toy trajectory recorder. Reserves name, declares vision, ships demo.
 - `v0.2.0a0`: Trajectory algebra (velocities, accelerations, drift, volatility, rolling statistics, summary), generic CSV / batch adapters, pre-registered diagnostics, public validation track.
 - `v0.2.1a0`: Documentation cleanup; PyPI summary description shortened.
-- `v0.3.0a0` *(current)*: Granger-causal coupling primitives (`granger_graph`, `CausalCouplingGraph`, four scalar diagnostics), with pre-registered diagnostics ([`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md)) and public validation track ([`docs/COUPLING_VALIDATION.md`](docs/COUPLING_VALIDATION.md), verdict: REJECTED).
-- `v0.4.0a0` *(planned)*: Generic envelope primitives (`Envelope`, trinary `ContainmentVerdict`) with the same pre-registration / public-validation discipline.
+- `v0.3.0a0`: Granger-causal coupling primitives (`granger_graph`, `CausalCouplingGraph`, four scalar diagnostics), with pre-registered diagnostics ([`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md)) and public validation track ([`docs/COUPLING_VALIDATION.md`](docs/COUPLING_VALIDATION.md), verdict: REJECTED).
+- `v0.4.0a0` *(current)*: Containment envelope primitives (`Envelope`, `Envelope.from_trajectory`, trinary `ContainmentVerdict`), with pre-registered diagnostics ([`docs/ENVELOPE_DIAGNOSTICS.md`](docs/ENVELOPE_DIAGNOSTICS.md)) and public validation track ([`docs/ENVELOPE_VALIDATION.md`](docs/ENVELOPE_VALIDATION.md), verdict: CONFIRMED).
 
-Beyond `v0.4.0a0`, no further cycle is pre-declared. Future work will be opened only when motivated by a concrete pre-registered design document or external collaboration.
+Beyond `v0.4.0a0`, the package returns to maintenance mode. No further cycle is pre-declared. Future work will be opened only when motivated by a concrete pre-registered design document or external collaboration.
 
 ## Position in the trilogy
 
 | Layer | Project | Question it answers |
 |---|---|---|
 | 1 | [Autonometrics](https://github.com/bugerchip/Autonometrics) | *Where* does a system sit on the autonomy atlas? |
-| 2 | **Autodynamics** | *How* do successive profiles differ, and how do their axes couple (recorded motion plus pairwise Granger coupling, not a dynamical model)? |
+| 2 | **Autodynamics** | *How* do successive profiles differ, how do their axes couple, and is a profile inside an admissible region (recorded motion + pairwise Granger coupling + per-axis containment envelope, not a dynamical model)? |
 | 3 | Ex-Machina | *Can we build* a system that occupies a chosen region? |
 
 ## License

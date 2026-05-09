@@ -5,6 +5,69 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0a0] — 2026-05-09
+
+### Added
+
+- New submodule `autodynamics.envelope` exposing per-axis
+  containment primitives: the :class:`Envelope` dataclass, its
+  trinary :meth:`Envelope.evaluate` containment check, the
+  :meth:`Envelope.contains` boolean shortcut, and the
+  :meth:`Envelope.from_trajectory` classmethod that learns per-axis
+  bounds from a reference :class:`ProfileTrajectory` using the
+  Shewhart (1931) control-limit recipe
+  ``(mean - width_multiplier * std, mean + width_multiplier * std)``
+  applied independently per axis (default `width_multiplier=2.0`).
+- Trinary verdict :class:`ContainmentVerdict` (``INSIDE`` /
+  ``OUTSIDE`` / ``UNDEFINED``) and result dataclass
+  :class:`ContainmentResult` exposing the global verdict, the
+  per-axis verdicts, the violated and undefined axes, and
+  human-readable reasons.
+- Mosaic-dropout-fielty axis admission: ``None``, missing keys,
+  ``NaN`` and ±∞ are all classified as ``UNDEFINED`` rather than
+  ``OUTSIDE``. Aggregation rule is ``OUTSIDE`` strictly dominates
+  ``UNDEFINED`` strictly dominates ``INSIDE``. ``Envelope`` accepts
+  any axis name (not just the five canonical Autonometrics axes)
+  via a ``Mapping[str, tuple[float, float]]`` bounds parameter.
+- Pre-registration document
+  [`docs/ENVELOPE_DIAGNOSTICS.md`](docs/ENVELOPE_DIAGNOSTICS.md):
+  seven locked decisions (envelope shape, default
+  ``width_multiplier``, aggregation rule, mosaic-dropout fielty,
+  frozen invariant, ``from_trajectory`` admission policy, named
+  boundary regimes) and four predicted outcomes (determinism,
+  round-trip mean-profile identity, aggregation precedence,
+  mosaic-dropout fielty). Verdict positive.
+- Public validation document
+  [`docs/ENVELOPE_VALIDATION.md`](docs/ENVELOPE_VALIDATION.md):
+  pre-registered out-of-sample experiment learning an envelope
+  from the first 70 % of each group's seeds and evaluating the
+  remaining 30 %. **Verdict: CONFIRMED** (28 non-trivial groups,
+  80.25 % of test profiles ``INSIDE``, 93.63 % not ``OUTSIDE``).
+- Reproducible validation script
+  [`examples/envelope_validation.py`](examples/envelope_validation.py).
+- 64 new tests across `tests/test_envelope_smoke.py` (13 smoke
+  tests) and `tests/test_envelope.py` (51 behavioural tests).
+  Total test count: 235 passed.
+
+### Changed
+
+- `pyproject.toml`: added `envelope`, `containment` and
+  `control-limits` keywords for PyPI search. No new runtime
+  dependencies.
+- README: new "Envelope checks" section documenting the public
+  API; new entry in "Public validation track" recording the
+  CONFIRMED verdict; layer-2 row of the trilogy table updated to
+  mention containment envelopes; roadmap returns to maintenance
+  mode after `v0.4.0a0`.
+
+### Notes
+
+- This is a feature release. The recording substrate, trajectory
+  algebra, adapter API and coupling primitives of `0.2.x` and
+  `0.3.x` are unchanged. All 171 tests from `0.3.0a0` continue to
+  pass alongside the 64 new tests.
+- `__version__` bumped from `0.3.0a0` to `0.4.0a0`.
+
 ## [0.3.0a0] — 2026-05-09
 
 ### Added

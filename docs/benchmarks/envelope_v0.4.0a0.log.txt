@@ -1,0 +1,75 @@
+==============================================================================
+Autodynamics — public validation experiment: envelope generalisation (v0.4.0a0)
+==============================================================================
+Pre-registered design lives in docs/ENVELOPE_VALIDATION.md. This script's
+constants (_TRAIN_FRACTION, _WIDTH_MULTIPLIER, _PO2_MIN_NOT_OUTSIDE_FRACTION,
+_PO3_MIN_INSIDE_FRACTION) are the operational form of LD-3 and LD-5 and
+must not be modified after the first run.
+
+Source release:          v0.8.0a0
+Train fraction:          0.7
+Width multiplier:        2.0
+PO-2 threshold (NOT OUT): >= 70%
+PO-3 threshold (INSIDE):  >= 40%
+
+[load] C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.8.0a0.csv
+        groups: 31
+
+Per-group containment output:
+------------------------------------------------------------------------------
+  class              params                 ntr  nte  ax  in   out  und  triv 
+  ----------------------------------------------------------------------------
+  ECASystem          rule=110               21   9    4   6    3    0    no   
+  ECASystem          rule=184               21   9    4   1    0    8    no   
+  ECASystem          rule=250               21   9    0   9    0    0    yes  
+  ECASystem          rule=30                21   9    4   8    1    0    no   
+  ECASystem          rule=90                21   9    0   9    0    0    yes  
+  KauffmanNetwork    coupling=0.0           21   9    0   9    0    0    yes  
+  KauffmanNetwork    coupling=0.33          21   9    4   3    1    5    no   
+  KauffmanNetwork    coupling=0.5           21   9    4   3    1    5    no   
+  KauffmanNetwork    coupling=0.67          21   9    4   8    0    1    no   
+  KauffmanNetwork    coupling=1.0           21   9    4   7    0    2    no   
+  PeriodicCycle      period=2               11   4    4   4    0    0    no   
+  PeriodicCycle      period=4               11   4    4   4    0    0    no   
+  PeriodicCycle      period=8               11   4    4   4    0    0    no   
+  PromisedCycle      adversarial,period=4   11   4    4   4    0    0    no   
+  PromisedCycle      period=2,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=2,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=2,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=2,alphabet=4,p_ 11   4    4   3    1    0    no   
+  PromisedCycle      period=2,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=4,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=4,p_ 11   4    4   3    1    0    no   
+  PromisedCycle      period=4,alphabet=4,p_ 11   4    4   3    1    0    no   
+  PromisedCycle      period=4,alphabet=8,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=8,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=8,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=8,p_ 11   4    4   4    0    0    no   
+  PromisedCycle      period=4,alphabet=8,p_ 11   4    4   3    1    0    no   
+  SimpleAutomaton    external               21   9    4   9    0    0    no   
+  SimpleAutomaton    self_generated         21   9    4   9    0    0    no   
+
+Aggregate
+------------------------------------------------------------------------------
+  groups total:                  31
+  groups trivial (empty env):    3
+  groups unsplit (n_seeds==1):   0
+  non-trivial groups:            28
+  test profiles (non-trivial):   157
+    INSIDE:                      126
+    OUTSIDE:                     10
+    UNDEFINED:                   21
+  fraction NOT OUTSIDE:          93.63%
+  fraction INSIDE:               80.25%
+
+Verdict
+------------------------------------------------------------------------------
+  PO-1 (script runs):                  PASS
+  PO-2 (>= 70% NOT OUTSIDE): PASS (93.63%)
+  PO-3 (>= 40% INSIDE):       PASS (80.25%)
+
+  Hypothesis: CONFIRMED
+
+Wrote C:\Users\Usuario\Documents\GitHub\Autodynamics\docs\benchmarks\envelope_v0.4.0a0.csv
