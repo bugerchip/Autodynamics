@@ -3,7 +3,7 @@
 > **Layer 2 of 3** in the autonomy research trilogy:
 > [Autonometrics](https://github.com/bugerchip/Autonometrics) (measure) -> **Autodynamics** (explain) -> Ex-Machina (build / emulate)
 
-**Status:** Pre-alpha. Recording substrate, algebra of trajectories, and generic adapters. No theoretical model is claimed.
+**Status:** Pre-alpha. Recording substrate, algebra of trajectories, generic adapters, and Granger-causal coupling primitives. No theoretical model is claimed.
 
 ## Vision
 
@@ -25,8 +25,14 @@ axis".
 - Adapters: `CSVTrajectoryAdapter` (load from a CSV with canonical
   axis columns) and `BatchTrajectoryAdapter` (build several parallel
   trajectories from grouped profiles, with cross-group `mean_summary`).
+- Granger-causal coupling: `granger_graph` (directed pairwise Granger
+  graph over admitted axes), `CausalCouplingGraph`, and four scalar
+  diagnostics (`symmetry_ratio`, `density`, `max_in_strength`,
+  `max_out_strength`).
 - Pre-registered boundary regimes and a saturation theorem documented
-  in [`docs/TRAJECTORY_DIAGNOSTICS.md`](docs/TRAJECTORY_DIAGNOSTICS.md).
+  in [`docs/TRAJECTORY_DIAGNOSTICS.md`](docs/TRAJECTORY_DIAGNOSTICS.md);
+  the coupling protocol is pre-registered in
+  [`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md).
 
 > **Install with:** `pip install autodynamics`
 > **Import as:** `import autodynamics`
@@ -138,6 +144,47 @@ A reproducible end-to-end example using both adapters over a public
 fixture is shipped at
 [`examples/trajectory_demo.py`](examples/trajectory_demo.py).
 
+## Coupling analysis
+
+Beyond intra-axis algebra, the package exposes a *cross-axis*
+primitive: a directed Granger-causal coupling graph between every
+pair of admitted axes of a `ProfileTrajectory`, with a stationarity
+gate (Augmented Dickey-Fuller), mosaic-dropout-fielty axis
+admission, and four scalar diagnostics. The implementation is the
+standard pairwise Granger test (Granger 1969; Sims 1980;
+Lütkepohl 2005) applied uniformly to the axes of the autonomy
+atlas, packaged so it composes with the rest of the algebra
+without bespoke calibration.
+
+```python
+from autodynamics import (
+    granger_graph, density, symmetry_ratio,
+    max_in_strength, max_out_strength,
+)
+
+graph = granger_graph(trajectory)
+# Also accepts a Mapping[str, Sequence[float | None]]:
+# graph = granger_graph({"closure": [...], "memory": [...]})
+
+graph.axes_used                                # admitted axes
+graph.excluded_axes                            # axis -> rejection reason
+graph.edge("closure", "memory").f_stat         # F-stat, lag, p-value, status
+
+symmetry_ratio(graph)                          # average min/max F over pairs
+density(graph)                                 # fraction of edges above F critical
+max_in_strength(graph, "memory")               # max incoming F-stat
+max_out_strength(graph, "closure")             # max outgoing F-stat
+```
+
+The protocol (length gate, ADF + up to two differences,
+AIC-selected VAR up to `max_lag`, F-test, mosaic-dropout-fielty
+axis admission) is pre-registered in
+[`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md). It
+is **not** a claim that any axis Granger-causes any other axis on
+any specific Autonometrics zoo; it is a composable primitive that
+can be fed real or synthetic trajectories without bespoke threshold
+tuning.
+
 ## Public validation track
 
 Pre-registered, falsifiable experiments that stress the algebra
@@ -155,21 +202,36 @@ new public release cycle.
   outputs in [`docs/benchmarks/turbulence_ranking_v0.2.1a0.csv`](docs/benchmarks/turbulence_ranking_v0.2.1a0.csv)
   and the full log in
   [`docs/benchmarks/turbulence_ranking_v0.2.1a0.log.txt`](docs/benchmarks/turbulence_ranking_v0.2.1a0.log.txt).
+  Verdict: REJECTED.
+- [`docs/COUPLING_VALIDATION.md`](docs/COUPLING_VALIDATION.md) — pre-registered
+  Granger coupling experiment running `granger_graph` against every
+  group of the same `v0.8.0a0` zoo. Reproducible from
+  [`examples/coupling_validation.py`](examples/coupling_validation.py); raw
+  outputs in [`docs/benchmarks/coupling_v0.3.0a0.csv`](docs/benchmarks/coupling_v0.3.0a0.csv)
+  and the full log in
+  [`docs/benchmarks/coupling_v0.3.0a0.log.txt`](docs/benchmarks/coupling_v0.3.0a0.log.txt).
+  Verdict: REJECTED, by a single group below the admission threshold
+  (15 of 31 groups admit ≥ 2 axes against a 50 % bar). The pipeline
+  itself is robust (93 % of admitted edges produce finite
+  F-statistics); the bottleneck is the saturation pattern of the
+  source zoo.
 
 ## Roadmap
 
 - `v0.1.0a0` / `v0.1.0a1`: Toy trajectory recorder. Reserves name, declares vision, ships demo.
 - `v0.2.0a0`: Trajectory algebra (velocities, accelerations, drift, volatility, rolling statistics, summary), generic CSV / batch adapters, pre-registered diagnostics, public validation track.
-- `v0.2.1a0` *(current)*: Documentation cleanup; PyPI summary description shortened.
+- `v0.2.1a0`: Documentation cleanup; PyPI summary description shortened.
+- `v0.3.0a0` *(current)*: Granger-causal coupling primitives (`granger_graph`, `CausalCouplingGraph`, four scalar diagnostics), with pre-registered diagnostics ([`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md)) and public validation track ([`docs/COUPLING_VALIDATION.md`](docs/COUPLING_VALIDATION.md), verdict: REJECTED).
+- `v0.4.0a0` *(planned)*: Generic envelope primitives (`Envelope`, trinary `ContainmentVerdict`) with the same pre-registration / public-validation discipline.
 
-The current scope is treated as a stable feature set. Further cycles will be opened only when motivated by a concrete pre-registered design document or external collaboration; no future cycle is pre-declared.
+Beyond `v0.4.0a0`, no further cycle is pre-declared. Future work will be opened only when motivated by a concrete pre-registered design document or external collaboration.
 
 ## Position in the trilogy
 
 | Layer | Project | Question it answers |
 |---|---|---|
 | 1 | [Autonometrics](https://github.com/bugerchip/Autonometrics) | *Where* does a system sit on the autonomy atlas? |
-| 2 | **Autodynamics** | *How* do successive profiles differ (recorded motion, not a dynamical model)? |
+| 2 | **Autodynamics** | *How* do successive profiles differ, and how do their axes couple (recorded motion plus pairwise Granger coupling, not a dynamical model)? |
 | 3 | Ex-Machina | *Can we build* a system that occupies a chosen region? |
 
 ## License

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "autodynamics"
-version = "0.2.1a0"
+version = "0.3.0a0"
 description = "Modelling autonomy dynamics over the Autonometrics atlas."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,6 +17,8 @@ keywords = [
     "self-determination",
     "autonometrics",
     "trajectories",
+    "granger-causality",
+    "coupling-analysis",
 ]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -32,6 +34,8 @@ classifiers = [
 dependencies = [
     "autonometrics>=0.9.0a0",
     "numpy>=1.24",
+    "scipy>=1.10",
+    "statsmodels>=0.14",
 ]
 
 [project.optional-dependencies]

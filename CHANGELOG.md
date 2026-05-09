@@ -5,6 +5,73 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0a0] — 2026-05-09
+
+### Added
+
+- New submodule `autodynamics.coupling` exposing pairwise Granger
+  causality primitives uniformly over the axes of a
+  `ProfileTrajectory` (or any `Mapping[str, Sequence[float | None]]`):
+  `granger_coupling` (pairwise), `granger_graph` (graph-level entry
+  point), and the result types `CausalCouplingResult` and
+  `CausalCouplingGraph`. Implements an Augmented Dickey-Fuller
+  stationarity gate, up to two automatic differences, AIC-selected
+  VAR with `max_lag` configurable, and an F-test on the
+  selected-lag coefficients (Granger 1969; Sims 1980;
+  Lütkepohl 2005).
+- Four scalar diagnostics on the coupling graph: `symmetry_ratio`
+  (mean min/max F-stat over unordered pairs), `density` (fraction of
+  edges above a threshold or per-edge F critical value),
+  `max_in_strength` and `max_out_strength` (maximum F-stat among
+  incoming/outgoing edges of an axis). All four return `None`
+  rather than raise when no admitted edge has a finite F-stat.
+- Mosaic-dropout-fielty axis admission: per-axis longest-contiguous
+  run extraction, configurable `mosaic_threshold` (default `0.8`),
+  `n_min` length gate (default `50`), `saturation_tol` constant
+  detection (default `1e-12`), with explicit reasons in
+  `CausalCouplingGraph.excluded_axes`. `None` and `NaN` are handled
+  identically.
+- Pre-registration document
+  [`docs/COUPLING_DIAGNOSTICS.md`](docs/COUPLING_DIAGNOSTICS.md):
+  seven locked decisions (pairwise protocol, length and lag
+  thresholds, mosaic-dropout policy, pair admission, named boundary
+  regimes, diagnostics aggregate semantics) and four predicted
+  outcomes (determinism, causality direction recovery on synthetic
+  AR pairs, no false-positive flood on independent series, mosaic
+  fielty preservation). Verdict positive.
+- Public validation document
+  [`docs/COUPLING_VALIDATION.md`](docs/COUPLING_VALIDATION.md):
+  pre-registered Granger experiment over the 31 groups of the
+  Autonometrics `v0.8.0a0` benchmark. **Verdict: REJECTED** by a
+  single group (15 of 31 groups admit ≥ 2 axes, against a 50 %
+  threshold; the pipeline produces finite F-statistics on 93 % of
+  admitted edges, but the source zoo's saturation pattern keeps
+  half of its groups below the two-axis admission bar).
+- Reproducible validation script
+  [`examples/coupling_validation.py`](examples/coupling_validation.py).
+- 52 new tests across `tests/test_coupling_smoke.py` (11 smoke
+  tests) and `tests/test_coupling.py` (41 behavioural tests). Total
+  test count: 171 passed.
+
+### Changed
+
+- `pyproject.toml`: declared dependencies on `scipy>=1.10` and
+  `statsmodels>=0.14` (used by the coupling protocol). Added
+  `granger-causality` and `coupling-analysis` keywords for PyPI
+  search.
+- README: new "Coupling analysis" section documenting the public
+  API; new entry in "Public validation track" recording the
+  REJECTED verdict; layer-2 row of the trilogy table updated to
+  mention pairwise coupling.
+
+### Notes
+
+- This is a feature release. The recording substrate, trajectory
+  algebra, and adapter API of `0.2.x` are unchanged. All 119 tests
+  from the previous release continue to pass alongside the 52 new
+  tests.
+- `__version__` bumped from `0.2.1a0` to `0.3.0a0`.
+
 ## [0.2.1a0] — 2026-05-07
 
 ### Changed

@@ -16,17 +16,33 @@ Public API:
   canonical axis columns.
 - :class:`BatchTrajectoryAdapter` — build several parallel trajectories
   from grouped profiles, with per-axis cross-group ``mean_summary``.
+- :class:`CausalCouplingGraph`, :class:`CausalCouplingResult`,
+  :func:`granger_coupling`, :func:`granger_graph`,
+  :func:`symmetry_ratio`, :func:`density`, :func:`max_in_strength`,
+  :func:`max_out_strength` — Granger-causal coupling analysis over
+  trajectories. See :mod:`autodynamics.coupling`.
 
-This is the *recording substrate plus algebra* of Autodynamics, not its
-theory. Every primitive is mosaic-dropout fielty: ``None`` propagates
-through differences, but never aborts aggregations. Pre-registered
-boundary regimes and a saturation theorem are documented in
-``docs/TRAJECTORY_DIAGNOSTICS.md``.
+This is the *recording substrate plus algebra* of Autodynamics, not a
+dynamical theory. Every primitive is mosaic-dropout fielty: ``None``
+propagates through differences, but never aborts aggregations.
+Pre-registered boundary regimes and the saturation theorem are
+documented in ``docs/TRAJECTORY_DIAGNOSTICS.md``; the Granger
+coupling protocol is documented in ``docs/COUPLING_DIAGNOSTICS.md``.
 """
 
 from autodynamics.adapters import (
     BatchTrajectoryAdapter,
     CSVTrajectoryAdapter,
+)
+from autodynamics.coupling import (
+    CausalCouplingGraph,
+    CausalCouplingResult,
+    density,
+    granger_coupling,
+    granger_graph,
+    max_in_strength,
+    max_out_strength,
+    symmetry_ratio,
 )
 from autodynamics.trajectory import (
     ProfileDelta,
@@ -34,13 +50,21 @@ from autodynamics.trajectory import (
     ProfileTrajectory,
 )
 
-__version__ = "0.2.1a0"
+__version__ = "0.3.0a0"
 
 __all__ = [
     "BatchTrajectoryAdapter",
     "CSVTrajectoryAdapter",
+    "CausalCouplingGraph",
+    "CausalCouplingResult",
     "ProfileDelta",
     "ProfileSnapshot",
     "ProfileTrajectory",
     "__version__",
+    "density",
+    "granger_coupling",
+    "granger_graph",
+    "max_in_strength",
+    "max_out_strength",
+    "symmetry_ratio",
 ]
