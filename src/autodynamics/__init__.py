@@ -21,13 +21,19 @@ Public API:
   :func:`symmetry_ratio`, :func:`density`, :func:`max_in_strength`,
   :func:`max_out_strength` — Granger-causal coupling analysis over
   trajectories. See :mod:`autodynamics.coupling`.
+- :class:`Envelope`, :class:`ContainmentResult`,
+  :class:`ContainmentVerdict` — per-axis admissible-region check
+  with a trinary verdict (``INSIDE`` / ``OUTSIDE`` / ``UNDEFINED``).
+  See :mod:`autodynamics.envelope`.
 
 This is the *recording substrate plus algebra* of Autodynamics, not a
 dynamical theory. Every primitive is mosaic-dropout fielty: ``None``
 propagates through differences, but never aborts aggregations.
 Pre-registered boundary regimes and the saturation theorem are
 documented in ``docs/TRAJECTORY_DIAGNOSTICS.md``; the Granger
-coupling protocol is documented in ``docs/COUPLING_DIAGNOSTICS.md``.
+coupling protocol is documented in ``docs/COUPLING_DIAGNOSTICS.md``;
+the envelope containment protocol is documented in
+``docs/ENVELOPE_DIAGNOSTICS.md``.
 """
 
 from autodynamics.adapters import (
@@ -44,19 +50,27 @@ from autodynamics.coupling import (
     max_out_strength,
     symmetry_ratio,
 )
+from autodynamics.envelope import (
+    ContainmentResult,
+    ContainmentVerdict,
+    Envelope,
+)
 from autodynamics.trajectory import (
     ProfileDelta,
     ProfileSnapshot,
     ProfileTrajectory,
 )
 
-__version__ = "0.3.0a0"
+__version__ = "0.4.0a0"
 
 __all__ = [
     "BatchTrajectoryAdapter",
     "CSVTrajectoryAdapter",
     "CausalCouplingGraph",
     "CausalCouplingResult",
+    "ContainmentResult",
+    "ContainmentVerdict",
+    "Envelope",
     "ProfileDelta",
     "ProfileSnapshot",
     "ProfileTrajectory",

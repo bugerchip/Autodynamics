@@ -4,7 +4,7 @@ import autodynamics
 
 
 def test_version_is_pinned() -> None:
-    assert autodynamics.__version__ == "0.3.0a0"
+    assert autodynamics.__version__ == "0.4.0a0"
 
 
 def test_package_imports() -> None:
@@ -17,3 +17,6 @@ def test_public_api_is_exposed() -> None:
     assert hasattr(autodynamics, "ProfileDelta")
     assert hasattr(autodynamics, "CSVTrajectoryAdapter")
     assert hasattr(autodynamics, "BatchTrajectoryAdapter")
+    assert hasattr(autodynamics, "Envelope")
+    assert hasattr(autodynamics, "ContainmentResult")
+    assert hasattr(autodynamics, "ContainmentVerdict")
