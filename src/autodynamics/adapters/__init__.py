@@ -9,10 +9,10 @@ The two adapters shipped in ``v0.2.0a0`` are:
 - :class:`BatchTrajectoryAdapter`: build several parallel trajectories
   from grouped profiles.
 
-Domain-specific adapters (longitudinal LLM transcripts, real-time
-streams, proprietary log formats) are explicitly out of scope for the
-public library; they belong to downstream products that build on top
-of Autodynamics.
+Domain-specific adapters (real-time streams, proprietary log
+formats, application-specific schemas) are explicitly out of scope
+for the public library; they belong to downstream products that
+build on top of Autodynamics.
 """
 
 from autodynamics.adapters.batch import BatchTrajectoryAdapter

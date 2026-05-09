@@ -1,0 +1,73 @@
+==============================================================================
+Autodynamics — public validation experiment: Granger coupling (v0.3.0a0)
+==============================================================================
+Pre-registered design lives in docs/COUPLING_VALIDATION.md. This script's
+constants (_N_MIN, _MAX_LAG, _MOSAIC_THRESHOLD, _SATURATION_TOL, _AXES,
+_PO2_MIN_GROUPS_WITH_TWO_AXES_FRACTION, _PO3_MIN_FINITE_EDGES_FRACTION) are the
+operational form of LD-3 and LD-5 and must not be modified after the first run.
+
+Source release:           v0.8.0a0
+Coupling n_min:           10
+Coupling max_lag:         2
+Mosaic threshold:         0.5
+Saturation tolerance:     1e-12
+Significance alpha:       0.05
+PO-2 threshold:           >= 50% of groups have >=2 admitted axes
+PO-3 threshold:           >= 30% of admitted edges have finite f_stat
+
+[load] C:\Users\Usuario\Documents\GitHub\Autonometrics\docs\benchmarks\v0.8.0a0.csv
+        groups: 31
+
+Per-group coupling output:
+------------------------------------------------------------------------------
+  class              params                 len   ax  ed  ed_fin  ed_sig  sym      dens    
+  -----------------------------------------------------------------------------------------
+  ECASystem          rule=110               30    2   2   2       0       0.563078 0.000000
+  ECASystem          rule=184               30    0   0   0       0       None     None    
+  ECASystem          rule=250               30    0   0   0       0       None     None    
+  ECASystem          rule=30                30    2   2   2       1       0.525581 0.500000
+  ECASystem          rule=90                30    0   0   0       0       None     None    
+  KauffmanNetwork    coupling=0.0           30    0   0   0       0       None     None    
+  KauffmanNetwork    coupling=0.33          30    0   0   0       0       None     None    
+  KauffmanNetwork    coupling=0.5           30    0   0   0       0       None     None    
+  KauffmanNetwork    coupling=0.67          30    0   0   0       0       None     None    
+  KauffmanNetwork    coupling=1.0           30    0   0   0       0       None     None    
+  PeriodicCycle      period=2               15    1   0   0       0       None     None    
+  PeriodicCycle      period=4               15    1   0   0       0       None     None    
+  PeriodicCycle      period=8               15    1   0   0       0       None     None    
+  PromisedCycle      adversarial,period=4   15    0   0   0       0       None     None    
+  PromisedCycle      period=2,alphabet=4,p_ 15    0   0   0       0       None     None    
+  PromisedCycle      period=2,alphabet=4,p_ 15    2   2   2       0       0.876593 0.000000
+  PromisedCycle      period=2,alphabet=4,p_ 15    2   2   2       0       0.611267 0.000000
+  PromisedCycle      period=2,alphabet=4,p_ 15    2   2   0       0       None     None    
+  PromisedCycle      period=2,alphabet=4,p_ 15    2   2   2       0       0.397172 0.000000
+  PromisedCycle      period=4,alphabet=4,p_ 15    0   0   0       0       None     None    
+  PromisedCycle      period=4,alphabet=4,p_ 15    2   2   2       1       0.093356 0.500000
+  PromisedCycle      period=4,alphabet=4,p_ 15    2   2   2       0       0.260873 0.000000
+  PromisedCycle      period=4,alphabet=4,p_ 15    2   2   2       1       0.067679 0.500000
+  PromisedCycle      period=4,alphabet=4,p_ 15    2   2   2       0       0.000399 0.000000
+  PromisedCycle      period=4,alphabet=8,p_ 15    0   0   0       0       None     None    
+  PromisedCycle      period=4,alphabet=8,p_ 15    2   2   2       0       0.351052 0.000000
+  PromisedCycle      period=4,alphabet=8,p_ 15    2   2   2       0       0.217098 0.000000
+  PromisedCycle      period=4,alphabet=8,p_ 15    2   2   2       0       0.000304 0.000000
+  PromisedCycle      period=4,alphabet=8,p_ 15    2   2   2       0       0.127520 0.000000
+  SimpleAutomaton    external               30    2   2   2       0       0.124995 0.000000
+  SimpleAutomaton    self_generated         30    0   0   0       0       None     None    
+
+Aggregate
+------------------------------------------------------------------------------
+  groups total:                  31
+  groups with >= 2 admitted axes: 15  (48.39%)
+  edges total (admitted):        30
+  edges with finite f_stat:      28  (93.33%)
+  edges significant (p < 0.05):    3
+
+Verdict
+------------------------------------------------------------------------------
+  PO-1 (script runs):              PASS
+  PO-2 (>= 50% groups with >=2 axes): FAIL (48.39%)
+  PO-3 (>= 30% of edges finite): PASS (93.33%)
+
+  Hypothesis: REJECTED
+
+Wrote C:\Users\Usuario\Documents\GitHub\Autodynamics\docs\benchmarks\coupling_v0.3.0a0.csv

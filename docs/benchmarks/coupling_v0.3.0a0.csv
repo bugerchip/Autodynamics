@@ -1,0 +1,39 @@
+kind,class,params,trajectory_length,axes_admitted,axes_used,edges,edges_finite,edges_significant_p_lt_05,symmetry_ratio,density,excluded,metric,value
+per_group_coupling,ECASystem,rule=110,30,2,"memory,persistence",2,2,0,0.563078,0.000000,closure:saturated_axis;coherence:mosaic_dropout (0/30 below 0.50);constraint:saturated_axis,,
+per_group_coupling,ECASystem,rule=184,30,0,,0,0,0,,,closure:mosaic_dropout (8/30 below 0.50);coherence:mosaic_dropout (0/30 below 0.50);constraint:mosaic_dropout (8/30 below 0.50);memory:mosaic_dropout (8/30 below 0.50);persistence:mosaic_dropout (8/30 below 0.50),,
+per_group_coupling,ECASystem,rule=250,30,0,,0,0,0,,,closure:mosaic_dropout (0/30 below 0.50);coherence:mosaic_dropout (0/30 below 0.50);constraint:mosaic_dropout (0/30 below 0.50);memory:mosaic_dropout (0/30 below 0.50);persistence:mosaic_dropout (0/30 below 0.50),,
+per_group_coupling,ECASystem,rule=30,30,2,"memory,persistence",2,2,1,0.525581,0.500000,closure:saturated_axis;coherence:mosaic_dropout (0/30 below 0.50);constraint:saturated_axis,,
+per_group_coupling,ECASystem,rule=90,30,0,,0,0,0,,,closure:mosaic_dropout (0/30 below 0.50);coherence:mosaic_dropout (0/30 below 0.50);constraint:mosaic_dropout (0/30 below 0.50);memory:mosaic_dropout (0/30 below 0.50);persistence:mosaic_dropout (0/30 below 0.50),,
+per_group_coupling,KauffmanNetwork,coupling=0.0,30,0,,0,0,0,,,closure:mosaic_dropout (1/30 below 0.50);coherence:mosaic_dropout (0/30 below 0.50);constraint:mosaic_dropout (1/30 below 0.50);memory:mosaic_dropout (1/30 below 0.50);persistence:mosaic_dropout (1/30 below 0.50),,
+per_group_coupling,KauffmanNetwork,coupling=0.33,30,0,,0,0,0,,,closure:too_short_after_dropout (3 < n_min=10);coherence:mosaic_dropout (0/30 below 0.50);constraint:too_short_after_dropout (3 < n_min=10);memory:too_short_after_dropout (3 < n_min=10);persistence:too_short_after_dropout (3 < n_min=10),,
+per_group_coupling,KauffmanNetwork,coupling=0.5,30,0,,0,0,0,,,closure:too_short_after_dropout (3 < n_min=10);coherence:mosaic_dropout (0/30 below 0.50);constraint:too_short_after_dropout (3 < n_min=10);memory:too_short_after_dropout (3 < n_min=10);persistence:too_short_after_dropout (3 < n_min=10),,
+per_group_coupling,KauffmanNetwork,coupling=0.67,30,0,,0,0,0,,,closure:too_short_after_dropout (6 < n_min=10);coherence:mosaic_dropout (0/30 below 0.50);constraint:too_short_after_dropout (6 < n_min=10);memory:too_short_after_dropout (6 < n_min=10);persistence:too_short_after_dropout (6 < n_min=10),,
+per_group_coupling,KauffmanNetwork,coupling=1.0,30,0,,0,0,0,,,closure:too_short_after_dropout (6 < n_min=10);coherence:mosaic_dropout (0/30 below 0.50);constraint:too_short_after_dropout (6 < n_min=10);memory:too_short_after_dropout (6 < n_min=10);persistence:too_short_after_dropout (6 < n_min=10),,
+per_group_coupling,PeriodicCycle,period=2,15,1,memory,0,0,0,,,closure:saturated_axis;coherence:mosaic_dropout (0/15 below 0.50);constraint:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PeriodicCycle,period=4,15,1,memory,0,0,0,,,closure:saturated_axis;coherence:mosaic_dropout (0/15 below 0.50);constraint:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PeriodicCycle,period=8,15,1,memory,0,0,0,,,closure:saturated_axis;coherence:mosaic_dropout (0/15 below 0.50);constraint:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"adversarial,period=4",15,0,,0,0,0,,,closure:saturated_axis;coherence:saturated_axis;constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=2,alphabet=4,p_noise=0.0",15,0,,0,0,0,,,closure:saturated_axis;coherence:saturated_axis;constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=2,alphabet=4,p_noise=0.25",15,2,"closure,coherence",2,2,0,0.876593,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=2,alphabet=4,p_noise=0.5",15,2,"closure,coherence",2,2,0,0.611267,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=2,alphabet=4,p_noise=0.75",15,2,"closure,coherence",2,0,0,,,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=2,alphabet=4,p_noise=1.0",15,2,"closure,coherence",2,2,0,0.397172,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=4,p_noise=0.0",15,0,,0,0,0,,,closure:saturated_axis;coherence:saturated_axis;constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=4,p_noise=0.25",15,2,"closure,coherence",2,2,1,0.093356,0.500000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=4,p_noise=0.5",15,2,"closure,coherence",2,2,0,0.260873,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=4,p_noise=0.75",15,2,"closure,coherence",2,2,1,0.067679,0.500000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=4,p_noise=1.0",15,2,"closure,coherence",2,2,0,0.000399,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=8,p_noise=0.0",15,0,,0,0,0,,,closure:saturated_axis;coherence:saturated_axis;constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=8,p_noise=0.25",15,2,"closure,coherence",2,2,0,0.351052,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=8,p_noise=0.5",15,2,"closure,coherence",2,2,0,0.217098,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=8,p_noise=0.75",15,2,"closure,coherence",2,2,0,0.000304,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,PromisedCycle,"period=4,alphabet=8,p_noise=1.0",15,2,"closure,coherence",2,2,0,0.127520,0.000000,constraint:mosaic_dropout (0/15 below 0.50);memory:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,SimpleAutomaton,external,30,2,"closure,memory",2,2,0,0.124995,0.000000,coherence:mosaic_dropout (0/30 below 0.50);constraint:saturated_axis;persistence:saturated_axis,,
+per_group_coupling,SimpleAutomaton,self_generated,30,0,,0,0,0,,,closure:saturated_axis;coherence:mosaic_dropout (0/30 below 0.50);constraint:saturated_axis;memory:saturated_axis;persistence:saturated_axis,,
+aggregate,,,,,,,,,,,,n_groups,31
+aggregate,,,,,,,,,,,,n_with_two_axes,15
+aggregate,,,,,,,,,,,,frac_two_axes,0.483871
+aggregate,,,,,,,,,,,,total_edges,30
+aggregate,,,,,,,,,,,,total_finite,28
+aggregate,,,,,,,,,,,,total_significant,3
+aggregate,,,,,,,,,,,,frac_finite,0.933333
